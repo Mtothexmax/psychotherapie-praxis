@@ -6,40 +6,14 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Privatpraxis für Psychotherapie | Verhaltenstherapie für Erwachsene</title>
+    <link rel="icon" type="image/svg+xml" href="icon.svg">
     <meta
         content="Privatpraxis für Psychologische Psychotherapie mit Schwerpunkt Verhaltenstherapie. Ausschließlich für Erwachsene. Keine Abrechnung mit gesetzlichen Krankenkassen."
         name="description" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'sage': '#88AB75',
-                        'sage-light': '#A0C49D',
-                        'mint': '#C4E4BC',
-                        'cream': '#E1F0C4',
-                        'sage-dark': '#6C8B5B',
-                        'boho-blush': '#E8D8D0',
-                        'text-dark': '#3D4035'
-                    },
-                    fontFamily: {
-                        'serif': ['"Cormorant Garamond"', 'Georgia', 'serif'],
-                        'sans': ['"Quicksand"', 'Helvetica', 'Arial', 'sans-serif']
-                    },
-                    borderRadius: {
-                        'organic-1': '60% 40% 30% 70% / 60% 30% 70% 40%',
-                        'organic-2': '30% 70% 70% 30% / 30% 30% 70% 70%',
-                        'organic-3': '50% 50% 20% 80% / 25% 80% 20% 75%'
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="style.css" rel="stylesheet" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap');
 
@@ -103,6 +77,17 @@
         .organic-shape {
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         }
+
+        .icon-svg {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            background-color: currentColor;
+            -webkit-mask: url('icon.svg') no-repeat center;
+            mask: url('icon.svg') no-repeat center;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+        }
     </style>
 </head>
 
@@ -112,7 +97,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center mb-4 md:mb-0">
                     <div class="w-12 h-12 rounded-organic-1 bg-gradient-to-br from-sage to-boho-blush flex items-center justify-center mr-4 shadow-sm text-white">
-                        <span class="material-symbols-outlined text-2xl">spa</span>
+                        <span class="icon-svg text-2xl"></span>
                     </div>
                     <div>
                         <h1 class="text-2xl font-serif font-semibold text-text-dark tracking-wide">Privatpraxis für Psychotherapie</h1>
@@ -364,7 +349,7 @@
                 <div>
                     <div class="flex items-center mb-6">
                         <div class="w-10 h-10 rounded-organic-1 bg-white/10 flex items-center justify-center mr-3">
-                            <span class="material-symbols-outlined text-cream">spa</span>
+                            <span class="icon-svg text-cream text-xl"></span>
                         </div>
                         <h3 class="text-xl font-serif font-semibold text-white tracking-wide">Privatpraxis für Psychotherapie</h3>
                     </div>
