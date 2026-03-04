@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <base target="_self" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Privatpraxis für Psychotherapie | Verhaltenstherapie für Erwachsene</title>
+    <meta
+        content="Privatpraxis für Psychologische Psychotherapie mit Schwerpunkt Verhaltenstherapie. Ausschließlich für Erwachsene. Keine Abrechnung mit gesetzlichen Krankenkassen."
+        name="description" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sage': '#88AB75',
+                        'sage-light': '#A0C49D',
+                        'mint': '#C4E4BC',
+                        'cream': '#E1F0C4',
+                        'sage-dark': '#6C8B5B',
+                        'boho-blush': '#E8D8D0',
+                        'text-dark': '#3D4035'
+                    },
+                    fontFamily: {
+                        'serif': ['"Cormorant Garamond"', 'Georgia', 'serif'],
+                        'sans': ['"Quicksand"', 'Helvetica', 'Arial', 'sans-serif']
+                    },
+                    borderRadius: {
+                        'organic-1': '60% 40% 30% 70% / 60% 30% 70% 40%',
+                        'organic-2': '30% 70% 70% 30% / 30% 30% 70% 70%',
+                        'organic-3': '50% 50% 20% 80% / 25% 80% 20% 75%'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap');
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 400;
+            background-image: radial-gradient(#A0C49D 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+            background-color: #E1F0C4;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .floral-border {
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .floral-border::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #88AB75, #E8D8D0, #88AB75);
+            border-radius: 4px;
+        }
+
+        .floral-accent {
+            position: relative;
+            display: inline-block;
+        }
+
+        .floral-accent::after {
+            content: "✧";
+            position: absolute;
+            right: -28px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #88AB75;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .btn-primary {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(136, 171, 117, 0.2);
+        }
+
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(108, 139, 91, 0.08);
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #A0C49D, transparent);
+            margin: 4rem auto;
+            max-width: 250px;
+        }
+
+        .organic-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen text-text-dark">
+    <header class="sticky top-0 z-50 bg-cream/95 backdrop-blur-md shadow-sm border-b border-sage/10 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 md:py-5">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <div class="w-12 h-12 rounded-organic-1 bg-gradient-to-br from-sage to-boho-blush flex items-center justify-center mr-4 shadow-sm text-white">
+                        <span class="material-symbols-outlined text-2xl">spa</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-serif font-semibold text-text-dark tracking-wide">Privatpraxis für Psychotherapie</h1>
+                        <p class="text-sm text-sage-dark font-medium mt-0.5">M. Sc. Psychologin &amp; Psychologische Psychotherapeutin</p>
+                    </div>
+                </div>
+                <nav class="w-full md:w-auto">
+                    <ul class="flex flex-wrap justify-center md:justify-end gap-5 md:gap-8" id="nav-list"></ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative py-16 md:py-28 overflow-hidden">
+        <div class="absolute top-[-10%] left-[-5%] w-96 h-96 bg-sage-light/20 rounded-organic-1 blur-3xl z-0"></div>
+        <div class="absolute bottom-[-10%] right-[-5%] w-80 h-80 bg-boho-blush/30 rounded-organic-2 blur-3xl z-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center md:text-left">
+                <div class="mb-10">
+                    <div class="inline-block px-4 py-1.5 rounded-full border border-sage/30 bg-white/50 text-sage-dark text-sm font-medium mb-6 tracking-wide">
+                        Ausschließlich für Erwachsene ab 18 Jahren
+                    </div>
+                    <h2 class="text-4xl md:text-6xl font-serif font-semibold mb-6 leading-tight text-text-dark">
+                        Klinische Verhaltenstherapie<br />
+                        <span class="text-sage-dark floral-accent italic">in privater Praxis</span>
+                    </h2>
+                    <p class="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl mx-auto md:mx-0 font-light">
+                        Als approbierte Psychologische Psychotherapeutin biete ich Ihnen fundierte, leitliniengerechte Diagnostik und Behandlung bei psychischen Erkrankungen.
+                    </p>
+                </div>
+                <div class="bg-white/70 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-sage/10 mb-10 max-w-2xl mx-auto md:mx-0">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mt-1">
+                            <span class="material-symbols-outlined text-sage-dark text-3xl">info</span>
+                        </div>
+                        <div class="ml-4 text-left">
+                            <h3 class="text-xl font-serif font-semibold text-sage-dark mb-1">Hinweis zur Abrechnung</h3>
+                            <p class="text-gray-600 text-sm md:text-base leading-relaxed">
+                                <strong>Keine Abrechnung mit gesetzlichen Krankenkassen (GKV) möglich.</strong><br />
+                                Mein Angebot richtet sich an Selbstzahler, Privatversicherte und Beihilfeberechtigte.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
+                    <a class="btn-primary bg-sage hover:bg-sage-dark text-white font-medium py-3.5 px-8 rounded-full inline-flex items-center justify-center tracking-wide" href="#kontakt">
+                        <span class="material-symbols-outlined mr-2 text-lg">calendar_month</span>
+                        Termin anfragen
+                    </a>
+                    <a class="bg-transparent border border-sage text-sage-dark hover:bg-sage/5 font-medium py-3.5 px-8 rounded-full inline-flex items-center justify-center transition duration-300" href="#adhs-diagnostik">
+                        <span class="material-symbols-outlined mr-2 text-lg">psychiatry</span>
+                        ADHS-Diagnostik (Video möglich)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="schwerpunkte" class="py-20 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-sage font-medium tracking-widest uppercase text-sm mb-2 block">Schwerpunkte</span>
+                <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 text-text-dark">Klinische Behandlungsbereiche</h2>
+                <div class="w-16 h-0.5 bg-sage mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto font-light">
+                    Evidenzbasierte Psychotherapie für Erwachsene bei folgenden Störungsbildern
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" id="treatment-grid"></div>
+            <div class="section-divider"></div>
+            <div class="max-w-5xl mx-auto scroll-mt-24" id="adhs-diagnostik">
+                <div class="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-sage/10 relative overflow-hidden">
+                    <div class="absolute -right-20 -top-20 w-64 h-64 bg-boho-blush/20 rounded-full blur-3xl"></div>
+                    <div class="flex flex-col md:flex-row items-center gap-10 relative z-10">
+                        <div class="md:w-1/3 flex justify-center">
+                            <div class="w-48 h-48 rounded-organic-3 bg-gradient-to-tr from-sage-light to-cream flex items-center justify-center shadow-inner border border-white/50 relative">
+                                <span class="material-symbols-outlined text-sage-dark text-6xl">video_camera_front</span>
+                                <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm">
+                                    <span class="material-symbols-outlined text-sage">done_all</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-2/3">
+                            <span class="text-sage font-medium tracking-widest uppercase text-sm mb-2 block">Spezialisierung</span>
+                            <h3 class="text-3xl font-serif font-semibold mb-4 text-text-dark">ADHS-Diagnostik für Erwachsene</h3>
+                            <p class="text-lg mb-6 text-gray-600 font-light border-l-2 border-sage pl-4">
+                                Bequem und ortsunabhängig: <strong class="text-sage-dark font-medium">Primär als Videosprechstunde durchführbar</strong>.
+                            </p>
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-start">
+                                    <span class="material-symbols-outlined text-sage mr-3 text-xl">check_circle</span>
+                                    <span class="text-gray-700">Leitliniengerechte und umfassende diagnostische Abklärung</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-symbols-outlined text-sage mr-3 text-xl">check_circle</span>
+                                    <span class="text-gray-700">Flexible Durchführung komplett online per zertifizierter Videosprechstunde</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="material-symbols-outlined text-sage mr-3 text-xl">check_circle</span>
+                                    <span class="text-gray-700">Strukturierte klinische Interviews und validierte Testverfahren</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ueber-mich" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-white/50 z-0"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-sage font-medium tracking-widest uppercase text-sm mb-2 block">Profil</span>
+                    <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 text-text-dark">Über mich</h2>
+                    <div class="w-16 h-0.5 bg-sage mx-auto"></div>
+                </div>
+                <div class="flex flex-col lg:flex-row gap-12 items-center">
+                    <div class="w-full lg:w-1/3 flex justify-center lg:justify-end">
+                        <div class="relative w-72 h-80 md:w-80 md:h-96">
+                            <div class="absolute inset-0 bg-sage-light/30 rounded-organic-1 transform rotate-6 scale-105"></div>
+                            <div class="absolute inset-0 bg-white rounded-organic-2 shadow-sm overflow-hidden flex items-center justify-center border-4 border-white">
+                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800" alt="Psychotherapeutin" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-2/3">
+                        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-10 shadow-sm border border-sage/10 card-hover">
+                            <div class="floral-border pl-6 mb-8">
+                                <h3 class="text-2xl font-serif font-semibold text-text-dark">Qualifikation &amp; Rahmenbedingungen</h3>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div class="space-y-6">
+                                    <div>
+                                        <div class="flex items-center mb-3">
+                                            <span class="material-symbols-outlined text-sage mr-2">school</span>
+                                            <h4 class="font-serif font-semibold text-lg text-sage-dark">Beruflicher Hintergrund</h4>
+                                        </div>
+                                        <ul class="text-gray-600 space-y-2 font-light ml-8 list-disc list-outside marker:text-sage/50">
+                                            <li>M. Sc. Psychologie</li>
+                                            <li>Approbation als Psychologische Psychotherapeutin</li>
+                                            <li>Fachkundenachweis in Verhaltenstherapie</li>
+                                            <li>Eintrag im Arztregister</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="space-y-6">
+                                    <div>
+                                        <div class="flex items-center mb-3">
+                                            <span class="material-symbols-outlined text-sage mr-2">person</span>
+                                            <h4 class="font-serif font-semibold text-lg text-sage-dark">Behandlungsfokus</h4>
+                                        </div>
+                                        <ul class="text-gray-600 space-y-2 font-light ml-8 list-disc list-outside marker:text-sage/50">
+                                            <li><strong class="font-medium text-gray-700">Ausschließlich Einzeltherapie</strong></li>
+                                            <li>Keine Gruppen- oder Paartherapie</li>
+                                            <li><strong class="font-medium text-gray-700">Nur für Erwachsene ab 18 Jahren</strong></li>
+                                            <li>Keine Behandlung von Kindern/Jugendlichen</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="py-20 relative">
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <span class="text-sage font-medium tracking-widest uppercase text-sm mb-2 block">Kontakt</span>
+                    <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 text-text-dark">Terminvereinbarung</h2>
+                    <div class="w-16 h-0.5 bg-sage mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 font-light">Bitte beachten Sie, dass es sich um eine Privatpraxis handelt.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-3xl p-8 shadow-sm border border-sage/10 h-full relative overflow-hidden">
+                            <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-mint/40 rounded-full blur-2xl"></div>
+                            <h3 class="text-2xl font-serif font-semibold mb-8 text-text-dark">Praxisinformationen</h3>
+                            <div class="space-y-8 relative z-10" id="contact-info"></div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-3">
+                        <div class="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-sage/10 relative">
+                            <h3 class="text-2xl font-serif font-semibold mb-8 text-text-dark">Kontaktanfrage</h3>
+                            <form class="space-y-6" id="contact-form" action="https://api.staticforms.dev/submit" method="POST">
+                                <input type="hidden" name="accessKey" value="sf_ebmh951518n7lcb9h78kbdf1">
+                                <input type="hidden" name="replyTo" value="@">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-sage-dark mb-2" for="name">Name *</label>
+                                        <input class="w-full px-4 py-3 bg-cream/30 border border-sage/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none" id="name" name="name" required type="text" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-sage-dark mb-2" for="email">E-Mail *</label>
+                                        <input class="w-full px-4 py-3 bg-cream/30 border border-sage/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none" id="email" name="email" required type="email" />
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-sage-dark mb-2" for="phone">Telefon</label>
+                                        <input class="w-full px-4 py-3 bg-cream/30 border border-sage/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none" id="phone" name="phone" type="tel" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-sage-dark mb-2" for="subject">Betreff</label>
+                                        <select class="w-full px-4 py-3 bg-cream/30 border border-sage/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none text-gray-700" id="subject" name="subject">
+                                            <option value="">Bitte auswählen</option>
+                                            <option value="termin">Therapieanfrage (Privat/Selbstzahler)</option>
+                                            <option value="adhs">ADHS-Diagnostik (Video)</option>
+                                            <option value="sonstiges">Sonstiges</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-sage-dark mb-2" for="message">Nachricht *</label>
+                                    <textarea class="w-full px-4 py-3 bg-cream/30 border border-sage/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none resize-none" id="message" name="message" required rows="4"></textarea>
+                                </div>
+                                <div class="flex items-start bg-sage/5 p-4 rounded-xl">
+                                    <input class="h-5 w-5 text-sage focus:ring-sage border-sage/30 rounded mt-0.5" id="privacy" name="privacy" required type="checkbox" />
+                                    <label class="ml-3 text-sm text-gray-600 font-light leading-relaxed" for="privacy">
+                                        Ich habe verstanden, dass es sich um eine <strong>Privatpraxis ohne Kassenzulassung</strong> handelt. Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu. *
+                                    </label>
+                                </div>
+                                <button class="w-full bg-sage hover:bg-sage-dark text-white font-medium py-4 px-6 rounded-xl transition duration-300 flex items-center justify-center tracking-wide" type="submit">
+                                    <span class="material-symbols-outlined mr-2">send</span>
+                                    Nachricht senden
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#5C6B57] text-white/90 py-16 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-3xl"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <div class="w-10 h-10 rounded-organic-1 bg-white/10 flex items-center justify-center mr-3">
+                            <span class="material-symbols-outlined text-cream">spa</span>
+                        </div>
+                        <h3 class="text-xl font-serif font-semibold text-white tracking-wide">Privatpraxis für Psychotherapie</h3>
+                    </div>
+                    <p class="text-white/70 font-light leading-relaxed mb-4">
+                        Klinische Psychologische Psychotherapie mit Schwerpunkt Verhaltenstherapie.
+                    </p>
+                    <div class="inline-block px-3 py-1 bg-white/10 rounded-md text-xs font-medium tracking-wider text-cream">
+                        NUR ERWACHSENE • PRIVATPRAXIS
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-serif font-semibold mb-6 text-cream border-b border-white/10 pb-2 inline-block">Therapieangebot</h4>
+                    <ul class="space-y-3 text-white/70 font-light">
+                        <li class="flex items-center"><span class="material-symbols-outlined text-sm mr-2 opacity-50">arrow_right</span> Klinische Verhaltenstherapie</li>
+                        <li class="flex items-center"><span class="material-symbols-outlined text-sm mr-2 opacity-50">arrow_right</span> ADHS-Diagnostik (Video)</li>
+                        <li class="flex items-center"><span class="material-symbols-outlined text-sm mr-2 opacity-50">arrow_right</span> Ausschließlich Einzeltherapie</li>
+                        <li class="flex items-center"><span class="material-symbols-outlined text-sm mr-2 opacity-50">arrow_right</span> Selbstzahler &amp; Privatversicherte</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-serif font-semibold mb-6 text-cream border-b border-white/10 pb-2 inline-block">Rechtliches</h4>
+                    <ul class="space-y-3 font-light" id="legal-links"></ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-white/10 text-center text-white/50 text-sm font-light">
+                <p>© <span id="current-year"></span> Privatpraxis für Psychotherapie. Alle Rechte vorbehalten.</p>
+                <p class="mt-2 text-xs">Diese Website dient ausschließlich zu Informationszwecken und ersetzt keine medizinische oder psychologische Diagnostik/Behandlung.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Legal Overlays -->
+    <div id="legal-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto bg-cream/98 backdrop-blur-lg">
+        <div class="container mx-auto px-4 py-20 relative">
+            <button id="close-legal" class="fixed top-8 right-8 w-12 h-12 rounded-full bg-sage/10 flex items-center justify-center text-sage hover:bg-sage hover:text-white transition-all duration-300">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            
+            <div id="impressum-content" class="hidden max-w-3xl mx-auto">
+                <h2 class="text-4xl font-serif font-semibold mb-8 text-text-dark">Impressum</h2>
+                <div class="space-y-6 text-gray-700 font-light leading-relaxed">
+                    <p><strong>Angaben gemäß § 5 TMG</strong></p>
+                    <p>Privatpraxis für Psychotherapie<br>M. Sc. Psychologin Vorname Nachname<br>Musterstraße 123<br>10115 Berlin</p>
+                    <p><strong>Kontakt</strong><br>Telefon: +49 (0) XXX XXX XXX<br>E-Mail: praxis@psychotherapie-beispiel.de</p>
+                    <p><strong>Gesetzliche Berufsbezeichnung</strong><br>Psychologische Psychotherapeutin (verliehen in der Bundesrepublik Deutschland)</p>
+                    <p><strong>Zuständige Aufsichtsbehörde</strong><br>Landesamt für Gesundheit und Soziales Berlin<br>Turmstraße 21, 10559 Berlin</p>
+                    <p><strong>Zuständige Kammer</strong><br>Psychotherapeutenkammer Berlin<br>Kurfürstendamm 184, 10707 Berlin</p>
+                    <p><strong>Berufsrechtliche Regelungen</strong><br>Gesetz über die Berufe des Psychologischen Psychotherapeuten und des Kinder- und Jugendlichenpsychotherapeuten (Psychotherapeutengesetz – PsychThG)<br>Berufsordnung der Psychotherapeutenkammer Berlin</p>
+                    <p><strong>Arztregistereintrag</strong><br>Eingetragen im Arztregister der Kassenärztlichen Vereinigung Berlin</p>
+                </div>
+            </div>
+
+            <div id="datenschutz-content" class="hidden max-w-3xl mx-auto">
+                <h2 class="text-4xl font-serif font-semibold mb-8 text-text-dark">Datenschutzerklärung</h2>
+                <div class="space-y-6 text-gray-700 font-light leading-relaxed">
+                    <h3 class="text-2xl font-serif font-semibold">1. Datenschutz auf einen Blick</h3>
+                    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
+                    <h3 class="text-2xl font-serif font-semibold">2. Datenerfassung auf dieser Website</h3>
+                    <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Die Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
+                    <p><strong>Wie erfassen wir Ihre Daten?</strong><br>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+                    <p><strong>Wofür nutzen wir Ihre Daten?</strong><br>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
+                    <h3 class="text-2xl font-serif font-semibold">3. Kontaktformular</h3>
+                    <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const navigationItems = [
+            { label: "Start", href: "#home" },
+            { label: "Schwerpunkte", href: "#schwerpunkte" },
+            { label: "ADHS-Diagnostik", href: "#adhs-diagnostik" },
+            { label: "Über mich", href: "#ueber-mich" },
+            { label: "Kontakt", href: "#kontakt" }
+        ];
+
+        const treatmentAreas = [
+            { title: "Depressionen", description: "Klinische Behandlung von depressiven Episoden und Dysthymie (anhaltende depressive Störung).", icon: "mood_bad" },
+            { title: "Angststörungen", description: "Evidenzbasierte Therapie von Panikstörungen, Agoraphobie, generalisierten Angststörungen und spezifischen Phobien.", icon: "shield" },
+            { title: "Trauma (PTBS)", description: "Spezifische Traumatherapie und Verarbeitung bei Posttraumatischer Belastungsstörung (PTBS) und akuten Belastungsreaktionen.", icon: "healing" },
+            { title: "Burnout", description: "Therapeutische Begleitung und Behandlung bei Erschöpfungssyndromen und stressbedingten Erkrankungen.", icon: "balance" }
+        ];
+
+        const contactInfo = [
+            { label: "E-Mail", value: "praxis@psychotherapie-beispiel.de", icon: "mail" },
+            { label: "Telefon", value: "+49 (0) XXX XXX XXX", icon: "phone" },
+            { label: "Praxisadresse", value: "Musterstraße 123<br>10115 Berlin", icon: "location_on" },
+            { label: "Sprechzeiten", value: "Termine ausschließlich nach vorheriger Vereinbarung.", icon: "schedule" }
+        ];
+
+        const legalLinks = [
+            { label: "Impressum", href: "#impressum" },
+            { label: "Datenschutzerklärung", href: "#datenschutz" }
+        ];
+
+        function renderNavItems(items) {
+            return items.map(item => `<li><a href="${item.href}" class="text-text-dark hover:text-sage transition duration-300 font-medium text-sm tracking-wide">${item.label}</a></li>`).join("");
+        }
+
+        function renderTreatmentAreas(items) {
+            return items.map(item => `
+                <div class="bg-white rounded-3xl p-8 shadow-sm border border-sage/10 card-hover relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-sage/5 rounded-bl-[100px] transition-all duration-500 group-hover:bg-sage/10"></div>
+                    <div class="w-14 h-14 rounded-organic-2 bg-sage/10 flex items-center justify-center mb-6 text-sage relative z-10 group-hover:scale-110 transition-transform duration-500">
+                        <span class="material-symbols-outlined text-2xl">${item.icon}</span>
+                    </div>
+                    <h3 class="text-xl font-serif font-semibold mb-3 text-text-dark relative z-10">${item.title}</h3>
+                    <p class="text-gray-600 font-light text-sm leading-relaxed relative z-10">${item.description}</p>
+                </div>`).join("");
+        }
+
+        function renderContactInfo(items) {
+            return items.map(item => `
+                <div class="flex items-start group">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="w-10 h-10 rounded-full bg-sage/10 flex items-center justify-center text-sage group-hover:bg-sage group-hover:text-white transition-colors duration-300">
+                            <span class="material-symbols-outlined text-[20px]">${item.icon}</span>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <h4 class="text-sm font-medium text-sage-dark uppercase tracking-wider mb-1">${item.label}</h4>
+                        <div class="text-gray-600 font-light leading-relaxed">${item.value}</div>
+                    </div>
+                </div>`).join("");
+        }
+
+        function renderLegalLinks(items) {
+            return items.map(item => `<li><a href="${item.href}" class="legal-link text-white/70 hover:text-cream transition duration-300 flex items-center cursor-pointer"><span class="material-symbols-outlined text-sm mr-2 opacity-50">link</span>${item.label}</a></li>`).join("");
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            document.getElementById("nav-list").innerHTML = renderNavItems(navigationItems);
+            document.getElementById("treatment-grid").innerHTML = renderTreatmentAreas(treatmentAreas);
+            document.getElementById("contact-info").innerHTML = renderContactInfo(contactInfo);
+            document.getElementById("legal-links").innerHTML = renderLegalLinks(legalLinks);
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+
+            const legalModal = document.getElementById("legal-modal");
+            const impressumContent = document.getElementById("impressum-content");
+            const datenschutzContent = document.getElementById("datenschutz-content");
+
+            document.addEventListener("click", (e) => {
+                const link = e.target.closest(".legal-link");
+                if (link) {
+                    e.preventDefault();
+                    const href = link.getAttribute("href");
+                    legalModal.classList.remove("hidden");
+                    document.body.classList.add("overflow-hidden");
+                    
+                    if (href === "#impressum") {
+                        impressumContent.classList.remove("hidden");
+                        datenschutzContent.classList.add("hidden");
+                    } else {
+                        datenschutzContent.classList.remove("hidden");
+                        impressumContent.classList.add("hidden");
+                    }
+                }
+            });
+
+            document.getElementById("close-legal").addEventListener("click", () => {
+                legalModal.classList.add("hidden");
+                document.body.classList.remove("overflow-hidden");
+            });
+
+            document.getElementById("contact-form").addEventListener("submit", function(e) {
+                e.preventDefault();
+                const form = this;
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalContent = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<span class="material-symbols-outlined mr-2 animate-spin">sync</span> Wird gesendet...';
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-70');
+
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                fetch(form.action, {
+                    method: form.method,
+                    body: JSON.stringify(data),
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Vielen Dank für Ihre Anfrage. Wir haben Ihre Nachricht erhalten.");
+                        form.reset();
+                    } else {
+                        alert("Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.");
+                    }
+                })
+                .catch(() => alert("Es gab einen Fehler. Bitte prüfen Sie Ihre Internetverbindung."))
+                .finally(() => {
+                    submitBtn.innerHTML = originalContent;
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('opacity-70');
+                });
+            });
+
+            document.addEventListener("click", (event) => {
+                const link = event.target.closest("a[href^='#']");
+                if (!link || link.classList.contains("legal-link")) return;
+                const href = link.getAttribute("href");
+                if (href === "#") return;
+                event.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    window.scrollTo({ top: targetElement.offsetTop - 80, behavior: "smooth" });
+                    history.pushState(null, null, href);
+                }
+            });
+
+            const header = document.querySelector('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 10) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

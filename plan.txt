@@ -1,0 +1,35 @@
+# Projektplan: Psychotherapie-Praxis Website Fertigstellung
+
+## 1. Design & Farben
+*   **Farbanpassung:** Die Tailwind-Konfiguration in `docs/index.html` muss mit den exakten Hex-Codes aus dem Prompt aktualisiert werden:
+    *   Dunkelgrün: #88AB75
+    *   Mittelgrün: #A0C49D
+    *   Hellgrün: #C4E4BC
+    *   Blassgelb/Grün: #E1F0C4
+*   **Boho/Floral Style:** Sicherstellen, dass die floralen Elemente und der "Boho-Look" durchgängig und professionell wirken.
+
+## 2. Kontaktformular
+*   **Integration:** Umstellung von Simulation auf echte API-Anbindung (StaticForms).
+*   **API-Key:** Verwendung des Keys `sf_ebmh951518n7lcb9h78kbdf1` aus der `Form example.txt`.
+*   **Validierung:** Sicherstellen, dass Pflichtfelder (Name, E-Mail, Nachricht, Datenschutz-Checkbox) korrekt geprüft werden.
+
+## 3. Rechtliches (Essentiell)
+*   **Impressum:** Erstellung eines rechtsgültigen Impressums für eine psychotherapeutische Praxis. Erforderliche Angaben:
+    *   Vollständiger Name und Praxisanschrift.
+    *   Kontaktdaten (E-Mail, Telefon).
+    *   Gesetzliche Berufsbezeichnung (Psychologische Psychotherapeutin) und Staat, in dem sie verliehen wurde.
+    *   Zuständige Kammer (Psychotherapeutenkammer).
+    *   Zuständige Aufsichtsbehörde.
+    *   Hinweis auf die Berufsordnung.
+*   **Datenschutzerklärung:** Erstellung einer DSGVO-konformen Datenschutzerklärung, insbesondere im Hinblick auf das Kontaktformular.
+
+## 4. Inhaltliche Korrekturen & Ergänzungen
+*   **"Über mich":** Einpflegen eines Platzhalterbildes (Portrait) für den "Über mich" Bereich.
+*   **Schwerpunkte:** Überprüfung, ob "Prävention von Burnout" und "depressive Verstimmungen" vollständig entfernt sind (bereits geprüft, ggf. Text verfeinern).
+*   **Klarheit:** Sicherstellen, dass der Fokus auf "Privat/Selbstzahler", "Nur Erwachsene" und "Einzeltherapie" unmissverständlich ist.
+*   **ADHS-Diagnostik:** Hervorhebung der Möglichkeit der Videosprechstunde.
+
+## 5. Technische Prüfung
+*   **Responsive Design:** Test der Darstellung auf Mobilgeräten.
+*   **Performance:** Kurze Überprüfung der Ladezeiten (vor allem Bilder).
+*   **Barrierefreiheit:** Grundlegende Checks (Alt-Texte, Kontraste).
