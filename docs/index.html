@@ -28,14 +28,14 @@
         body {
             font-family: 'Quicksand', sans-serif;
             font-weight: 400;
-            background-image: radial-gradient(#A0C49D 0.5px, transparent 0.5px);
+            background-image: radial-gradient(#B5C6B1 0.5px, transparent 0.5px);
             background-size: 24px 24px;
-            background-color: #E1F0C4;
+            background-color: #F9F6F0;
             transition: background-color 0.5s ease;
         }
 
         .dark body {
-            background-image: radial-gradient(#6C8B5B 0.5px, transparent 0.5px);
+            background-image: radial-gradient(#72836E 0.5px, transparent 0.5px);
             background-color: #1e241b;
         }
 
@@ -57,7 +57,7 @@
             top: 0;
             bottom: 0;
             width: 3px;
-            background: linear-gradient(to bottom, #88AB75, #E8D8D0, #88AB75);
+            background: linear-gradient(to bottom, #9BAE96, #E8D8D0, #9BAE96);
             border-radius: 4px;
         }
 
@@ -69,7 +69,7 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(136, 171, 117, 0.2);
+            box-shadow: 0 10px 20px rgba(155, 174, 150, 0.2);
         }
 
         .card-hover {
@@ -78,12 +78,12 @@
 
         .card-hover:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(108, 139, 91, 0.08);
+            box-shadow: 0 12px 30px rgba(114, 131, 110, 0.08);
         }
 
         .section-divider {
             height: 1px;
-            background: linear-gradient(to right, transparent, #A0C49D, transparent);
+            background: linear-gradient(to right, transparent, #B5C6B1, transparent);
             margin: 4rem auto;
             max-width: 250px;
         }
@@ -91,35 +91,28 @@
         .organic-shape {
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         }
-
-        .icon-svg {
-            display: inline-block;
-            width: 1em;
-            height: 1em;
-            background-color: currentColor;
-            -webkit-mask: url('icon.svg') no-repeat center;
-            mask: url('icon.svg') no-repeat center;
-            -webkit-mask-size: contain;
-            mask-size: contain;
-        }
     </style>
 </head>
 
 <body class="min-h-screen text-text-dark dark:text-cream">
-    <header class="sticky top-0 z-50 bg-cream/70 dark:bg-text-dark/80 backdrop-blur-lg shadow-sm border-b border-sage/10 dark:border-sage/20 transition-all duration-300">
+    <header class="sticky top-0 z-50 bg-cream/95 dark:bg-text-dark/80 backdrop-blur-lg shadow-sm border-b border-sage/10 dark:border-sage/20 transition-all duration-300">
         <div class="container mx-auto px-4 py-4 md:py-5">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center mb-4 md:mb-0">
-                    <div class="w-12 h-12 rounded-organic-1 bg-gradient-to-br from-sage to-boho-blush flex items-center justify-center mr-4 shadow-sm text-white">
-                        <span class="icon-svg text-2xl"></span>
+                    <div class="w-12 h-12 rounded-organic-1 bg-gradient-to-br from-sage to-boho-blush flex items-center justify-center mr-4 shadow-sm overflow-hidden">
+                        <img src="icon.svg" class="w-8 h-8 object-contain brightness-0 invert" alt="Logo">
                     </div>
                     <div>
                         <h1 class="text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-wide">Privatpraxis für Psychotherapie</h1>
                         <p class="text-sm text-sage-dark dark:text-sage-light font-medium mt-0.5">M. Sc. Psychologin &amp; Psychologische Psychotherapeutin</p>
                     </div>
                 </div>
-                <nav class="w-full md:w-auto">
+                <nav class="w-full md:w-auto flex items-center justify-center md:justify-end gap-6 md:gap-10">
                     <ul class="flex flex-wrap justify-center md:justify-end gap-5 md:gap-8" id="nav-list"></ul>
+                    <button id="theme-toggle" class="w-10 h-10 rounded-full bg-sage/10 dark:bg-boho-blush/10 flex items-center justify-center text-sage-dark dark:text-boho-blush hover:bg-sage/20 dark:hover:bg-boho-blush/20 transition-all duration-300 flex-shrink-0">
+                        <span class="material-symbols-outlined theme-icon-light">light_mode</span>
+                        <span class="material-symbols-outlined theme-icon-dark hidden">dark_mode</span>
+                    </button>
                 </nav>
             </div>
         </div>
@@ -131,9 +124,6 @@
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-4xl mx-auto text-center md:text-left">
                 <div class="mb-10">
-                    <div class="inline-block px-4 py-1.5 rounded-full border border-sage/30 dark:border-sage/50 bg-white/50 dark:bg-white/5 text-sage-dark dark:text-sage-light text-sm font-medium mb-6 tracking-wide">
-                        Ausschließlich für Erwachsene ab 18 Jahren
-                    </div>
                     <h2 class="text-4xl md:text-6xl font-serif font-semibold mb-6 leading-tight text-text-dark dark:text-cream">
                         Professionelle Psychotherapie<br />
                         <span class="text-sage-dark dark:text-sage-light italic">für Erwachsene</span>
@@ -219,7 +209,7 @@
                 <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 text-text-dark dark:text-cream">Behandlungsbereiche</h2>
                 <div class="w-16 h-0.5 bg-sage mx-auto mb-6"></div>
                 <p class="text-lg text-gray-600 dark:text-cream/70 max-w-2xl mx-auto font-light">
-                    Ich behandele folgende psychische Erkrankungen bei Erwachsenen
+                    Ich behandle z.B. folgende psychische Erkrankungen bei Erwachsenen
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" id="treatment-grid"></div>
@@ -362,8 +352,8 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                 <div>
                     <div class="flex items-center mb-6">
-                        <div class="w-10 h-10 rounded-organic-1 bg-white/10 flex items-center justify-center mr-3">
-                            <span class="icon-svg text-cream text-xl"></span>
+                        <div class="w-10 h-10 rounded-organic-1 bg-white/10 flex items-center justify-center mr-3 overflow-hidden">
+                            <img src="icon.svg" class="w-6 h-6 object-contain brightness-0 invert" alt="Logo">
                         </div>
                         <h3 class="text-xl font-serif font-semibold text-white tracking-wide">Privatpraxis für Psychotherapie</h3>
                     </div>
@@ -444,8 +434,8 @@
         const treatmentAreas = [
             { title: "Depressionen", description: "Behandlung von depressiven Episoden und anhaltenden depressiven Störungen", icon: "sentiment_dissatisfied" },
             { title: "Angststörungen", description: "Evidenzbasierte Therapie von Panikstörungen, Agoraphobie, generalisierten Angststörungen und spezifischen Phobien.", icon: "cognition" },
-            { title: "Trauma (PTBS)", description: "Spezifische Traumatherapie und Verarbeitung bei Posttraumatischer Belastungsstörung (PTBS) und akuten Belastungsreaktionen.", icon: "healing" },
-            { title: "Burnout", description: "Therapeutische Begleitung und Behandlung bei Erschöpfungssyndromen und stressbedingten Erkrankungen.", icon: "battery_3_bar" }
+            { title: "Traumafolgestörungen", description: "Behandlung von Folgebeschwerden nach belastenden Ereignissen, wie z.B. der Posttraumatischen Belastungsstörung (PTBS).", icon: "healing" },
+            { title: "Burnout", description: "Therapeutische Hilfe bei emotionaler Erschöpfung, reduzierter Leistungsfähigkeit und dem Gefühl des Ausgebranntseins.", icon: "battery_3_bar" }
         ];
 
         const contactInfo = [
@@ -461,7 +451,7 @@
         ];
 
         function renderNavItems(items) {
-            const isSmallScreen = window.innerWidth < 540;
+            const isSmallScreen = window.innerWidth < 560;
             return items
                 .filter(item => {
                     if (!isSmallScreen) return true;
@@ -596,6 +586,35 @@
                 } else {
                     header.classList.remove('shadow-md');
                 }
+            });
+
+            // Theme Toggle Logic
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const iconLight = themeToggleBtn.querySelector('.theme-icon-light');
+            const iconDark = themeToggleBtn.querySelector('.theme-icon-dark');
+
+            function updateThemeIcons() {
+                if (document.documentElement.classList.contains('dark')) {
+                    iconLight.classList.add('hidden');
+                    iconDark.classList.remove('hidden');
+                } else {
+                    iconLight.classList.remove('hidden');
+                    iconDark.classList.add('hidden');
+                }
+            }
+
+            // Initial icon state
+            updateThemeIcons();
+
+            themeToggleBtn.addEventListener('click', () => {
+                if (document.documentElement.classList.contains('dark')) {
+                    document.documentElement.classList.remove('dark');
+                    localStorage.theme = 'light';
+                } else {
+                    document.documentElement.classList.add('dark');
+                    localStorage.theme = 'dark';
+                }
+                updateThemeIcons();
             });
         });
     </script>

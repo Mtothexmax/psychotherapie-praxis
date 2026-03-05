@@ -5,11 +5,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'sage': '#88AB75',
-        'sage-light': '#A0C49D',
-        'mint': '#C4E4BC',
-        'cream': '#E1F0C4',
-        'sage-dark': '#6C8B5B',
+        'sage': '#9BAE96',
+        'sage-light': '#B5C6B1',
+        'mint': '#D2DDD0',
+        'cream': '#F9F6F0',
+        'sage-dark': '#72836E',
         'boho-blush': '#E8D8D0',
         'text-dark': '#3D4035'
       },
