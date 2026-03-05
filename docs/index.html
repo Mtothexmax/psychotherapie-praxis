@@ -15,7 +15,6 @@
         rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <script>
-        // Check for saved theme or system preference
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
@@ -95,12 +94,12 @@
 </head>
 
 <body class="min-h-screen text-text-dark dark:text-cream">
-    <header class="sticky top-0 z-50 bg-cream/95 dark:bg-text-dark/80 backdrop-blur-lg shadow-sm border-b border-sage/10 dark:border-sage/20 transition-all duration-300">
+    <header class="sticky top-0 z-50 bg-cream/95 dark:bg-text-dark/80 backdrop-blur-lg shadow-sm border-b border-sage/10 dark:border-boho-blush/20 transition-all duration-300">
         <div class="container mx-auto px-4 py-4 md:py-5">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center mb-4 md:mb-0">
-                    <div class="w-12 h-12 rounded-organic-1 bg-gradient-to-br from-sage to-boho-blush flex items-center justify-center mr-4 shadow-sm overflow-hidden">
-                        <img src="icon.svg" class="w-8 h-8 object-contain brightness-0 invert" alt="Logo">
+                    <div class="mr-4">
+                        <img src="icon.svg" class="w-32 h-24 object-contain dark:brightness-200" alt="Logo">
                     </div>
                     <div>
                         <h1 class="text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-wide">Privatpraxis für Psychotherapie</h1>
@@ -109,7 +108,7 @@
                 </div>
                 <nav class="w-full md:w-auto flex items-center justify-center md:justify-end gap-6 md:gap-10">
                     <ul class="flex flex-wrap justify-center md:justify-end gap-5 md:gap-8" id="nav-list"></ul>
-                    <button id="theme-toggle" class="w-10 h-10 rounded-full bg-sage/10 dark:bg-boho-blush/10 flex items-center justify-center text-sage-dark dark:text-boho-blush hover:bg-sage/20 dark:hover:bg-boho-blush/20 transition-all duration-300 flex-shrink-0">
+                    <button id="theme-toggle" class="w-10 h-10 rounded-full bg-sage/10 dark:bg-boho-blush/10 flex items-center justify-center text-boho-blush dark:text-boho-blush hover:bg-sage/20 dark:hover:bg-boho-blush/20 transition-all duration-300 flex-shrink-0">
                         <span class="material-symbols-outlined theme-icon-light">light_mode</span>
                         <span class="material-symbols-outlined theme-icon-dark hidden">dark_mode</span>
                     </button>
@@ -126,19 +125,19 @@
                 <div class="mb-10">
                     <h2 class="text-4xl md:text-6xl font-serif font-semibold mb-6 leading-tight text-text-dark dark:text-cream">
                         Professionelle Psychotherapie<br />
-                        <span class="text-sage-dark dark:text-sage-light italic">für Erwachsene</span>
+                        <span class="text-sage-dark dark:text-boho-blush italic">für Erwachsene</span>
                     </h2>
                     <p class="text-lg md:text-xl text-gray-600 dark:text-cream/70 mb-8 leading-relaxed max-w-2xl mx-auto md:mx-0 font-light">
                         Als approbierte Psychologische Psychotherapeutin mit Schwerpunkt Verhaltenstherapie biete ich Ihnen professionelle Unterstützung bei psychischen Erkrankungen.
                     </p>
                 </div>
-                <div class="bg-white/70 dark:bg-text-dark/50 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-sage/10 dark:border-sage/20 mb-10 max-w-2xl mx-auto md:mx-0">
+                <div class="bg-white/70 dark:bg-text-dark/50 backdrop-blur-md rounded-2xl p-6 shadow-sm border border-sage/10 dark:border-boho-blush/20 mb-10 max-w-2xl mx-auto md:mx-0">
                     <div class="flex items-start">
                         <div class="flex-shrink-0 mt-1">
-                            <span class="material-symbols-outlined text-sage-dark dark:text-sage-light text-3xl">info</span>
+                            <span class="material-symbols-outlined text-sage-dark dark:text-boho-blush text-3xl">info</span>
                         </div>
                         <div class="ml-4 text-left">
-                            <h3 class="text-xl font-serif font-semibold text-sage-dark dark:text-sage-light mb-1">Privatpraxis - Wichtiger Hinweis</h3>
+                            <h3 class="text-xl font-serif font-semibold text-sage-dark dark:text-boho-blush mb-1">Privatpraxis - Wichtiger Hinweis</h3>
                             <p class="text-gray-600 dark:text-cream/70 text-sm md:text-base leading-relaxed">
                                 <strong>Keine Abrechnung mit gesetzlichen Krankenkassen möglich.</strong><br />
                                 Behandlung nur mit privaten Krankenversicherungen, Beihilfe, Heilfürsorge oder als Selbstzahler.
@@ -151,9 +150,9 @@
                         <span class="material-symbols-outlined mr-2 text-lg">calendar_month</span>
                         Termin anfragen
                     </a>
-                    <a class="bg-transparent border border-sage dark:border-sage-light text-sage-dark dark:text-sage-light hover:bg-sage/5 dark:hover:bg-sage/10 font-medium py-3.5 px-8 rounded-full inline-flex items-center justify-center transition duration-300" href="#adhs-diagnostik">
-                        <span class="material-symbols-outlined mr-2 text-lg">psychiatry</span>
-                        ADHS-Diagnostik (Videosprechstunde möglich)
+                    <a class="bg-transparent border border-sage dark:border-boho-blush text-sage-dark dark:text-boho-blush hover:bg-sage/5 dark:hover:bg-boho-blush/10 font-medium py-4 px-10 rounded-full inline-flex flex-col items-center justify-center transition duration-300 text-center leading-tight" href="#adhs-diagnostik">
+                        <span class="text-lg">ADHS-Diagnostik</span>
+                        <span class="text-sm font-normal opacity-80">(Videosprechstunde möglich)</span>
                     </a>
                 </div>
             </div>
@@ -164,7 +163,7 @@
     <section id="adhs-diagnostik" class="py-12 relative scroll-mt-24">
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-5xl mx-auto">
-                <div class="bg-white dark:bg-text-dark/40 rounded-3xl p-8 md:p-12 shadow-sm border border-sage/10 dark:border-sage/20 relative overflow-hidden">
+                <div class="bg-white dark:bg-text-dark/40 rounded-3xl p-8 md:p-12 shadow-sm border border-sage/10 dark:border-boho-blush/20 relative overflow-hidden">
                     <div class="absolute -right-20 -top-20 w-64 h-64 bg-boho-blush/20 dark:bg-sage/5 rounded-full blur-3xl"></div>
                     <div class="flex flex-col md:flex-row items-center gap-10 relative z-10">
                         <div class="md:w-1/3 flex justify-center">
@@ -176,7 +175,7 @@
                             </div>
                         </div>
                         <div class="md:w-2/3">
-                            <span class="text-sage dark:text-sage-light font-medium tracking-widest uppercase text-sm mb-2 block">Spezialisierung</span>
+                            <span class="text-sage dark:text-boho-blush font-medium tracking-widest uppercase text-sm mb-2 block">Spezialisierung</span>
                             <h3 class="text-3xl font-serif font-semibold mb-4 text-text-dark dark:text-cream">ADHS-Diagnostik für Erwachsene</h3>
                             <p class="text-lg mb-6 text-gray-600 dark:text-cream/70 font-light border-l-2 border-sage pl-4">
                                 <strong>Regelmäßig kurzfristige Termine verfügbar</strong>
@@ -205,11 +204,11 @@
     <section id="schwerpunkte" class="py-20 relative">
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
-                <span class="text-sage dark:text-sage-light font-medium tracking-widest uppercase text-sm mb-2 block">Schwerpunkte</span>
+                <span class="text-sage dark:text-boho-blush font-medium tracking-widest uppercase text-sm mb-2 block">Schwerpunkte</span>
                 <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 text-text-dark dark:text-cream">Behandlungsbereiche</h2>
                 <div class="w-16 h-0.5 bg-sage mx-auto mb-6"></div>
                 <p class="text-lg text-gray-600 dark:text-cream/70 max-w-2xl mx-auto font-light">
-                    Ich behandle z.B. folgende psychische Erkrankungen bei Erwachsenen
+                    Ich behandle folgende psychische Erkrankungen bei Erwachsenen
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto" id="treatment-grid"></div>
@@ -221,7 +220,7 @@
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16">
-                    <span class="text-sage dark:text-sage-light font-medium tracking-widest uppercase text-sm mb-2 block">Profil</span>
+                    <span class="text-sage dark:text-boho-blush font-medium tracking-widest uppercase text-sm mb-2 block">Profil</span>
                     <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 text-text-dark dark:text-cream">Über mich</h2>
                     <div class="w-16 h-0.5 bg-sage mx-auto"></div>
                 </div>
@@ -230,12 +229,12 @@
                         <div class="relative w-72 h-80 md:w-80 md:h-96">
                             <div class="absolute inset-0 bg-sage-light/30 dark:bg-sage/10 rounded-organic-1 transform rotate-6 scale-105"></div>
                             <div class="absolute inset-0 bg-white dark:bg-text-dark rounded-organic-2 shadow-sm overflow-hidden flex items-center justify-center border-4 border-white dark:border-text-dark/50">
-                                <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800" alt="Psychotherapeutin" class="w-full h-full object-cover opacity-90">
+                                <span class="material-symbols-outlined text-sage text-7xl mb-4 opacity-50 dark:text-cream">face_4</span>
                             </div>
                         </div>
                     </div>
                     <div class="w-full lg:w-2/3">
-                        <div class="bg-white/80 dark:bg-text-dark/60 backdrop-blur-sm rounded-3xl p-8 md:p-10 shadow-sm border border-sage/10 dark:border-sage/20 card-hover">
+                        <div class="bg-white/80 dark:bg-text-dark/60 backdrop-blur-sm rounded-3xl p-8 md:p-10 shadow-sm border border-sage/10 dark:border-boho-blush/20 card-hover">
                             <div class="floral-border pl-6 mb-8">
                                 <h3 class="text-2xl font-serif font-semibold text-text-dark dark:text-cream">Qualifikation &amp; Therapieangebot</h3>
                             </div>
@@ -243,8 +242,8 @@
                                 <div class="space-y-6">
                                     <div>
                                         <div class="flex items-center mb-3">
-                                            <span class="material-symbols-outlined text-sage dark:text-sage-light mr-2">school</span>
-                                            <h4 class="font-serif font-semibold text-lg text-sage-dark dark:text-sage-light">Qualifikation</h4>
+                                            <span class="material-symbols-outlined text-sage dark:text-boho-blush mr-2">school</span>
+                                            <h4 class="font-serif font-semibold text-lg text-sage-dark dark:text-boho-blush">Qualifikation</h4>
                                         </div>
                                         <ul class="text-gray-600 dark:text-cream/70 space-y-2 font-light ml-8 list-disc list-outside marker:text-sage/50">
                                             <li>M. Sc. Psychologie</li>
@@ -257,8 +256,8 @@
                                 <div class="space-y-6">
                                     <div>
                                         <div class="flex items-center mb-3">
-                                            <span class="material-symbols-outlined text-sage dark:text-sage-light mr-2">person</span>
-                                            <h4 class="font-serif font-semibold text-lg text-sage-dark dark:text-sage-light">Behandlungsfokus</h4>
+                                            <span class="material-symbols-outlined text-boho-blush dark:text-boho-blush mr-2">person</span>
+                                            <h4 class="font-serif font-semibold text-lg text-sage-dark dark:text-boho-blush">Behandlungsfokus</h4>
                                         </div>
                                         <ul class="text-gray-600 dark:text-cream/70 space-y-2 font-light ml-8 list-disc list-outside marker:text-sage/50">
                                             <li><strong class="font-medium text-gray-700 dark:text-cream">Nur Einzeltherapie</strong></li>
@@ -280,21 +279,21 @@
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-5xl mx-auto">
                 <div class="text-center mb-16">
-                    <span class="text-sage dark:text-sage-light font-medium tracking-widest uppercase text-sm mb-2 block">Kontakt</span>
+                    <span class="text-sage dark:text-boho-blush font-medium tracking-widest uppercase text-sm mb-2 block">Kontakt</span>
                     <h2 class="text-3xl md:text-5xl font-serif font-semibold mb-6 text-text-dark dark:text-cream">Kontakt &amp; Terminvereinbarung</h2>
                     <div class="w-16 h-0.5 bg-sage mx-auto mb-6"></div>
                     <p class="text-lg text-gray-600 dark:text-cream/70 font-light">Nehmen Sie Kontakt auf für ein erstes Gespräch</p>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
                     <div class="lg:col-span-2">
-                        <div class="bg-white dark:bg-text-dark/40 rounded-3xl p-8 shadow-sm border border-sage/10 dark:border-sage/20 h-full relative overflow-hidden">
+                        <div class="bg-white dark:bg-text-dark/40 rounded-3xl p-8 shadow-sm border border-sage/10 dark:border-boho-blush/20 h-full relative overflow-hidden">
                             <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-mint/40 dark:bg-sage/5 rounded-full blur-2xl"></div>
                             <h3 class="text-2xl font-serif font-semibold mb-8 text-text-dark dark:text-cream">Praxisinformationen</h3>
                             <div class="space-y-8 relative z-10" id="contact-info"></div>
                         </div>
                     </div>
                     <div class="lg:col-span-3">
-                        <div class="bg-white dark:bg-text-dark/40 rounded-3xl p-8 md:p-10 shadow-sm border border-sage/10 dark:border-sage/20 relative">
+                        <div class="bg-white dark:bg-text-dark/40 rounded-3xl p-8 md:p-10 shadow-sm border border-sage/10 dark:border-boho-blush/20 relative">
                             <h3 class="text-2xl font-serif font-semibold mb-8 text-text-dark dark:text-cream">Kontaktanfrage</h3>
                             <form class="space-y-6" id="contact-form" action="https://api.staticforms.dev/submit" method="POST">
                                 <input type="hidden" name="accessKey" value="sf_189c2690jm42igf1n2ja96eh">
@@ -302,21 +301,21 @@
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
                                         <label class="block text-sm font-medium text-sage-dark dark:text-sage-light mb-2" for="name">Name *</label>
-                                        <input class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-sage/40 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none dark:text-cream" id="name" name="name" required type="text" />
+                                        <input class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-boho-blush/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none dark:text-cream" id="name" name="name" required type="text" />
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-sage-dark dark:text-sage-light mb-2" for="email">E-Mail *</label>
-                                        <input class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-sage/40 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none dark:text-cream" id="email" name="email" required type="email" />
+                                        <input class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-boho-blush/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-boho-blush transition duration-300 outline-none dark:text-cream" id="email" name="email" required type="email" />
                                     </div>
                                 </div>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <div>
                                         <label class="block text-sm font-medium text-sage-dark dark:text-sage-light mb-2" for="phone">Telefon</label>
-                                        <input class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-sage/40 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none dark:text-cream" id="phone" name="phone" type="tel" />
+                                        <input class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-boho-blush/20 dark:border-boho-blush/40 rounded-xl focus:ring-2 focus:ring-boho-blush focus:border-boho-blush transition duration-300 outline-none dark:text-cream" id="phone" name="phone" type="tel" />
                                     </div>
                                     <div>
                                         <label class="block text-sm font-medium text-sage-dark dark:text-sage-light mb-2" for="subject">Betreff</label>
-                                        <select class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-sage/40 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none text-gray-700 dark:text-cream/80" id="subject" name="subject">
+                                        <select class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-boho-blush/40 rounded-xl focus:ring-2 focus:ring-sage focus:border-boho-blush transition duration-300 outline-none text-gray-700 dark:text-cream/80" id="subject" name="subject">
                                             <option value="" class="dark:bg-text-dark">Bitte auswählen</option>
                                             <option value="termin" class="dark:bg-text-dark">Therapieanfrage (Privat/Selbstzahler)</option>
                                             <option value="adhs" class="dark:bg-text-dark">ADHS-Diagnostik (Video)</option>
@@ -326,15 +325,15 @@
                                 </div>
                                 <div>
                                     <label class="block text-sm font-medium text-sage-dark dark:text-sage-light mb-2" for="message">Nachricht *</label>
-                                    <textarea class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-sage/40 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none resize-none dark:text-cream" id="message" name="message" required rows="4"></textarea>
+                                    <textarea class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-boho-blush/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-boho-blush transition duration-300 outline-none resize-none dark:text-cream" id="message" name="message" required rows="4"></textarea>
                                 </div>
-                                <div class="flex items-start bg-sage/5 dark:bg-sage/10 p-4 rounded-xl">
-                                    <input class="h-5 w-5 text-sage focus:ring-sage border-sage/30 rounded mt-0.5" id="privacy" name="privacy" required type="checkbox" />
+                                <div class="flex items-start bg-boho-blush/5 dark:bg-boho-blush/10 p-4 rounded-xl">
+                                    <input class="h-5 w-5 text-boho-blush focus:ring-boho-blush border-boho-blush/30 rounded mt-0.5" id="privacy" name="privacy" required type="checkbox" />
                                     <label class="ml-3 text-sm text-gray-600 dark:text-cream/70 font-light leading-relaxed" for="privacy">
                                         Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu. *
                                     </label>
                                 </div>
-                                <button class="w-full bg-sage hover:bg-sage-dark text-white font-medium py-4 px-6 rounded-xl transition duration-300 flex items-center justify-center tracking-wide" type="submit">
+                                <button class="w-full bg-boho-blush hover:bg-boho-blush/80 text-text-dark font-medium py-4 px-6 rounded-xl transition duration-300 flex items-center justify-center tracking-wide" type="submit">
                                     <span class="material-symbols-outlined mr-2">send</span>
                                     Nachricht senden
                                 </button>
@@ -352,8 +351,8 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
                 <div>
                     <div class="flex items-center mb-6">
-                        <div class="w-10 h-10 rounded-organic-1 bg-white/10 flex items-center justify-center mr-3 overflow-hidden">
-                            <img src="icon.svg" class="w-6 h-6 object-contain brightness-0 invert" alt="Logo">
+                        <div class="mr-3">
+                            <img src="icon.svg" class="w-12 h-12 object-contain" alt="Logo">
                         </div>
                         <h3 class="text-xl font-serif font-semibold text-white tracking-wide">Privatpraxis für Psychotherapie</h3>
                     </div>
@@ -385,10 +384,9 @@
         </div>
     </footer>
 
-    <!-- Legal Overlays -->
     <div id="legal-modal" class="fixed inset-0 z-[100] hidden overflow-y-auto bg-white/60 dark:bg-text-dark/90 backdrop-blur-lg">
         <div class="container mx-auto px-4 py-20 relative">
-            <button id="close-legal" class="fixed top-8 right-8 w-12 h-12 rounded-full bg-sage/10 flex items-center justify-center text-sage hover:bg-sage hover:text-white transition-all duration-300">
+            <button id="close-legal" class="fixed top-8 right-8 w-12 h-12 rounded-full bg-sage/10 flex items-center justify-center text-sage hover:bg-boho-blush hover:text-white transition-all duration-300">
                 <span class="material-symbols-outlined">close</span>
             </button>
             
@@ -459,15 +457,15 @@
                     if (isSmallScreen) return !["#adhs-diagnostik", "#ueber-mich"].includes(item.href);
                     return true;
                 })
-                .map(item => `<li><a href="${item.href}" class="text-text-dark dark:text-cream/80 hover:text-sage dark:hover:text-sage-light transition duration-300 font-medium text-sm tracking-wide">${item.label}</a></li>`)
+                .map(item => `<li><a href="${item.href}" class="text-text-dark dark:text-cream/80 hover:text-sage dark:hover:text-boho-blush transition duration-300 font-medium text-sm tracking-wide">${item.label}</a></li>`)
                 .join("");
         }
 
         function renderTreatmentAreas(items) {
             return items.map(item => `
-                <div class="bg-white dark:bg-text-dark/40 rounded-3xl p-8 shadow-sm border border-sage/10 dark:border-sage/20 card-hover relative overflow-hidden group">
+                <div class="bg-white dark:bg-text-dark/40 rounded-3xl p-8 shadow-sm border border-sage/10 dark:border-boho-blush/20 card-hover relative overflow-hidden group">
                     <div class="absolute top-0 right-0 w-24 h-24 bg-sage/5 rounded-bl-[100px] transition-all duration-500 group-hover:bg-sage/10"></div>
-                    <div class="w-14 h-14 rounded-organic-2 bg-sage/10 dark:bg-sage/20 flex items-center justify-center mb-6 text-sage dark:text-sage-light relative z-10 group-hover:scale-110 transition-transform duration-500">
+                    <div class="w-14 h-14 rounded-organic-2 bg-sage/10 dark:bg-boho-blush/20 flex items-center justify-center mb-6 text-sage dark:text-boho-blush relative z-10 group-hover:scale-110 transition-transform duration-500">
                         <span class="material-symbols-outlined text-2xl">${item.icon}</span>
                     </div>
                     <h3 class="text-xl font-serif font-semibold mb-3 text-text-dark dark:text-cream relative z-10">${item.title}</h3>
@@ -479,19 +477,19 @@
             return items.map(item => `
                 <div class="flex items-start group">
                     <div class="flex-shrink-0 mt-1">
-                        <div class="w-10 h-10 rounded-full bg-sage/10 dark:bg-sage/20 flex items-center justify-center text-sage dark:text-sage-light group-hover:bg-sage group-hover:text-white transition-colors duration-300">
+                        <div class="w-10 h-10 rounded-full bg-sage/10 dark:bg-sage/20 flex items-center justify-center text-sage dark:text-boho-blush group-hover:bg-sage group-hover:text-white transition-colors duration-300">
                             <span class="material-symbols-outlined text-[20px]">${item.icon}</span>
                         </div>
                     </div>
                     <div class="ml-4">
-                        <h4 class="text-sm font-medium text-sage-dark dark:text-sage-light uppercase tracking-wider mb-1">${item.label}</h4>
+                        <h4 class="text-sm font-medium text-sage-dark dark:text-boho-blush uppercase tracking-wider mb-1">${item.label}</h4>
                         <div class="text-gray-600 dark:text-cream/70 font-light leading-relaxed">${item.value}</div>
                     </div>
                 </div>`).join("");
         }
 
         function renderLegalLinks(items) {
-            return items.map(item => `<li><a href="${item.href}" class="legal-link text-white/70 hover:text-cream transition duration-300 flex items-center cursor-pointer"><span class="material-symbols-outlined text-sm mr-2 opacity-50">link</span>${item.label}</a></li>`).join("");
+            return items.map(item => `<li><a href="${item.href}" class="legal-link text-text-dark/70 dark:text-white/70 hover:text-sage dark:hover:text-boho-blush transition duration-300 flex items-center cursor-pointer"><span class="material-symbols-outlined text-sm mr-2 opacity-50">link</span>${item.label}</a></li>`).join("");
         }
 
         document.addEventListener("DOMContentLoaded", () => {
@@ -590,7 +588,6 @@
                 }
             });
 
-            // Theme Toggle Logic
             const themeToggleBtn = document.getElementById('theme-toggle');
             const iconLight = themeToggleBtn.querySelector('.theme-icon-light');
             const iconDark = themeToggleBtn.querySelector('.theme-icon-dark');
@@ -605,7 +602,6 @@
                 }
             }
 
-            // Initial icon state
             updateThemeIcons();
 
             themeToggleBtn.addEventListener('click', () => {
