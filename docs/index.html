@@ -451,11 +451,13 @@
         ];
 
         function renderNavItems(items) {
-            const isSmallScreen = window.innerWidth < 560;
+            const isSmallScreen = window.innerWidth < 1300;
+            const isVerySmallScreen = window.innerWidth < 1050;
             return items
                 .filter(item => {
-                    if (!isSmallScreen) return true;
-                    return !["#schwerpunkte", "#ueber-mich"].includes(item.href);
+                    if (isVerySmallScreen) return  !["#home", "#adhs-diagnostik", "#ueber-mich"].includes(item.href);
+                    if (isSmallScreen) return !["#adhs-diagnostik", "#ueber-mich"].includes(item.href);
+                    return true;
                 })
                 .map(item => `<li><a href="${item.href}" class="text-text-dark dark:text-cream/80 hover:text-sage dark:hover:text-sage-light transition duration-300 font-medium text-sm tracking-wide">${item.label}</a></li>`)
                 .join("");
