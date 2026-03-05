@@ -99,7 +99,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="flex items-center mb-4 md:mb-0">
                     <div class="mr-4">
-                        <img src="icon.svg" class="w-32 h-24 object-contain dark:brightness-200" alt="Logo">
+                        <div class="svg-inject w-32 h-24 object-contain" data-src="icon.svg"></div>
                     </div>
                     <div>
                         <h1 class="text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-wide">Privatpraxis für Psychotherapie</h1>
@@ -352,7 +352,7 @@
                 <div>
                     <div class="flex items-center mb-6">
                         <div class="mr-3">
-                            <img src="icon.svg" class="w-12 h-12 object-contain" alt="Logo">
+                            <div class="svg-inject w-12 h-12 object-contain" data-src="icon.svg"></div>
                         </div>
                         <h3 class="text-xl font-serif font-semibold text-white tracking-wide">Privatpraxis für Psychotherapie</h3>
                     </div>
@@ -614,6 +614,34 @@
                 }
                 updateThemeIcons();
             });
+
+            async function injectSVGs() {
+                const svgs = document.querySelectorAll('.svg-inject');
+                for (const container of svgs) {
+                    const src = container.getAttribute('data-src');
+                    if (!src) continue;
+                    try {
+                        const response = await fetch(src);
+                        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                        const svgText = await response.text();
+                        container.innerHTML = svgText;
+                        const svgElement = container.querySelector('svg');
+                        if (svgElement) {
+                            svgElement.classList.add('w-full', 'h-full');
+                            // Ensure internal paths use currentColor if not already set
+                            const paths = svgElement.querySelectorAll('path, g');
+                            paths.forEach(p => {
+                                if (!p.getAttribute('fill') || p.getAttribute('fill') !== 'none') {
+                                    p.setAttribute('fill', 'currentColor');
+                                }
+                            });
+                        }
+                    } catch (error) {
+                        console.error('Error injecting SVG:', error);
+                    }
+                }
+            }
+            injectSVGs();
         });
     </script>
 </body>
