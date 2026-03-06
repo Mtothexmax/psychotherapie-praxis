@@ -90,25 +90,63 @@
         .organic-shape {
             border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
         }
+
+        /* Stable Shrinking Header */
+        header.scrolled .container {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+        }
+        
+        header.scrolled .svg-inject {
+            width: 5rem !important;
+            height: 3.75rem !important;
+        }
+
+        header.scrolled h1 {
+            font-size: 1.125rem !important;
+        }
+
+        @media (max-width: 768px) {
+            header.scrolled .flex-col {
+                flex-direction: row !important;
+                justify-content: space-between !important;
+                gap: 0.5rem;
+            }
+            header.scrolled .flex-col > div:first-child {
+                margin-bottom: 0 !important;
+            }
+            header.scrolled p {
+                display: none;
+            }
+            header.scrolled nav {
+                width: auto !important;
+            }
+            header.scrolled #nav-list {
+                gap: 0.75rem !important;
+            }
+            header.scrolled #nav-list a {
+                font-size: 0.7rem !important;
+            }
+        }
     </style>
 </head>
 
 <body class="min-h-screen text-text-dark dark:text-cream">
-    <header class="sticky top-0 z-50 bg-cream/60 dark:bg-text-dark/60 backdrop-blur-lg shadow-sm border-b border-sage/10 dark:border-boho-blush/20 transition-all duration-300">
-        <div class="container mx-auto px-4 py-4 md:py-5">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="flex items-center mb-4 md:mb-0">
-                    <div class="mr-4">
-                        <div class="svg-inject w-32 h-24 object-contain" data-src="icon.svg"></div>
+    <header class="sticky top-0 z-50 bg-cream/60 dark:bg-text-dark/60 backdrop-blur-lg shadow-sm border-b border-sage/10 dark:border-boho-blush/20 transition-all duration-200">
+        <div class="container mx-auto px-4 py-4 md:py-5 transition-all duration-200">
+            <div class="flex flex-col md:flex-row justify-between items-center transition-all duration-200">
+                <div class="flex items-center mb-4 md:mb-0 transition-all duration-200">
+                    <div class="mr-4 transition-all duration-200">
+                        <div class="svg-inject w-32 h-24 object-contain transition-all duration-200" data-src="icon.svg"></div>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-wide">Privatpraxis für Psychotherapie</h1>
-                        <p class="text-sm text-sage-dark dark:text-sage-light font-medium mt-0.5">M. Sc. Psychologin &amp; Psychologische Psychotherapeutin</p>
+                        <h1 class="text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-wide transition-all duration-200">Privatpraxis für Psychotherapie</h1>
+                        <p class="text-sm text-sage-dark dark:text-sage-light font-medium mt-0.5 transition-all duration-200">M. Sc. Psychologin &amp; Psychologische Psychotherapeutin</p>
                     </div>
                 </div>
-                <nav class="w-full md:w-auto flex items-center justify-center md:justify-end gap-6 md:gap-10">
-                    <ul class="flex flex-wrap justify-center md:justify-end gap-5 md:gap-8" id="nav-list"></ul>
-                    <button id="theme-toggle" class="w-10 h-10 rounded-full bg-sage/10 dark:bg-boho-blush/10 flex items-center justify-center text-boho-blush dark:text-boho-blush hover:bg-sage/20 dark:hover:bg-boho-blush/20 transition-all duration-300 flex-shrink-0">
+                <nav class="w-full md:w-auto flex items-center justify-center md:justify-end gap-4 md:gap-10 transition-all duration-200">
+                    <ul class="flex flex-wrap justify-center md:justify-end gap-4 md:gap-8 transition-all duration-200" id="nav-list"></ul>
+                    <button id="theme-toggle" class="w-10 h-10 rounded-full bg-sage/10 dark:bg-boho-blush/10 flex items-center justify-center text-boho-blush dark:text-boho-blush hover:bg-sage/20 dark:hover:bg-boho-blush/20 transition-all duration-200 flex-shrink-0">
                         <span class="material-symbols-outlined theme-icon-light">light_mode</span>
                         <span class="material-symbols-outlined theme-icon-dark hidden">dark_mode</span>
                     </button>
@@ -246,10 +284,13 @@
                                             <h4 class="font-serif font-semibold text-lg text-sage-dark dark:text-boho-blush">Qualifikation</h4>
                                         </div>
                                         <ul class="text-gray-600 dark:text-cream/70 space-y-2 font-light ml-8 list-disc list-outside marker:text-sage/50">
-                                            <li>M. Sc. Psychologie</li>
+                                            <li>M. Sc. Psychologin</li>
                                             <li>Approbation als Psychologische Psychotherapeutin</li>
-                                            <li>Richtlinienverfahren Verhaltenstherapie</li>
                                             <li>Eintrag im Arztregister</li>
+                                            <li>Fachkundenachweis für das Richtlinienverfahren Verhaltenstherapie</li>
+                                            <li>Mitglied der Psychotherapeutenkammer Rheinland-Pfalz</li>
+                                            <li>Zusatzqualifikation für Gruppenpsychotherapie</li>
+                                            <li>EMDR-Therapeutin in Fortbildung</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -448,15 +489,8 @@
         ];
 
         function renderNavItems(items) {
-            const isSmallScreen = window.innerWidth < 1300;
-            const isVerySmallScreen = window.innerWidth < 1050;
             return items
-                .filter(item => {
-                    if (isVerySmallScreen) return  !["#home", "#adhs-diagnostik", "#ueber-mich"].includes(item.href);
-                    if (isSmallScreen) return !["#adhs-diagnostik", "#ueber-mich"].includes(item.href);
-                    return true;
-                })
-                .map(item => `<li><a href="${item.href}" class="text-text-dark dark:text-cream/80 hover:text-sage dark:hover:text-boho-blush transition duration-300 font-medium text-sm tracking-wide">${item.label}</a></li>`)
+                .map(item => `<li><a href="${item.href}" class="text-text-dark dark:text-cream/80 hover:text-sage dark:hover:text-boho-blush transition duration-300 font-medium text-sm tracking-wide whitespace-nowrap">${item.label}</a></li>`)
                 .join("");
         }
 
@@ -580,10 +614,10 @@
 
             const header = document.querySelector('header');
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 10) {
-                    header.classList.add('shadow-md');
+                if (window.scrollY > 20) {
+                    header.classList.add('shadow-md', 'scrolled');
                 } else {
-                    header.classList.remove('shadow-md');
+                    header.classList.remove('shadow-md', 'scrolled');
                 }
             });
 
