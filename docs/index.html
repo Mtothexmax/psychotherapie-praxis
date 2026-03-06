@@ -31,6 +31,7 @@
             background-size: 24px 24px;
             background-color: #F9F6F0;
             transition: background-color 0.5s ease;
+            overflow-x: hidden;
         }
 
         .dark body {
@@ -128,6 +129,23 @@
                 font-size: 0.7rem !important;
             }
         }
+
+        @media (max-width: 400px) {
+            header.scrolled .fuer-span {
+                display: none;
+            }
+            header.scrolled h1 {
+                font-size: 0.95rem !important;
+                line-height: 1.2;
+            }
+            header.scrolled #nav-list {
+                display: none !important;
+            }
+            header.scrolled .container {
+                padding-left: 0.5rem;
+                padding-right: 0.5rem;
+            }
+        }
     </style>
 </head>
 
@@ -140,15 +158,15 @@
                         <div class="svg-inject w-32 h-24 object-contain transition-all duration-200" data-src="icon.svg"></div>
                     </div>
                     <div>
-                        <h1 class="text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-wide transition-all duration-200">Privatpraxis für Psychotherapie</h1>
+                        <h1 class="text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-wide transition-all duration-200">Privatpraxis <span class="fuer-span">für </span>Psychotherapie</h1>
                         <p class="text-sm text-sage-dark dark:text-sage-light font-medium mt-0.5 transition-all duration-200">M. Sc. Psychologin &amp; Psychologische Psychotherapeutin</p>
                     </div>
                 </div>
                 <nav class="w-full md:w-auto flex items-center justify-center md:justify-end gap-6 md:gap-10 transition-all duration-200">
                     <ul class="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8 transition-all duration-200" id="nav-list"></ul>
-                    <button id="theme-toggle" class="w-10 h-10 rounded-full bg-sage/10 dark:bg-boho-blush/10 flex items-center justify-center text-boho-blush dark:text-boho-blush hover:bg-sage/20 dark:hover:bg-boho-blush/20 transition-all duration-200 flex-shrink-0">
-                        <span class="material-symbols-outlined theme-icon-light">light_mode</span>
-                        <span class="material-symbols-outlined theme-icon-dark hidden">dark_mode</span>
+                    <button id="theme-toggle" class="w-8 h-8 rounded-full bg-sage/10 dark:bg-boho-blush/10 flex items-center justify-center text-boho-blush dark:text-boho-blush hover:bg-sage/20 dark:hover:bg-boho-blush/20 transition-all duration-200 flex-shrink-0 overflow-hidden">
+                        <span class="material-symbols-outlined theme-icon-light text-[20px]">light_mode</span>
+                        <span class="material-symbols-outlined theme-icon-dark hidden text-[20px]">dark_mode</span>
                     </button>
                 </nav>
             </div>
