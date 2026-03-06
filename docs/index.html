@@ -489,7 +489,16 @@
         ];
 
         function renderNavItems(items) {
+            const width = window.innerWidth;
             return items
+                .filter(item => {
+                    // Mobile: only show most critical links
+                    if (width < 520) return ["#schwerpunkte", "#kontakt"].includes(item.href);
+                    // Tablet/Small desktop transitions
+                    if (width < 1050) return !["#home", "#adhs-diagnostik", "#ueber-mich"].includes(item.href);
+                    if (width < 1300) return !["#adhs-diagnostik", "#ueber-mich"].includes(item.href);
+                    return true;
+                })
                 .map(item => `<li><a href="${item.href}" class="text-text-dark dark:text-cream/80 hover:text-sage dark:hover:text-boho-blush transition duration-300 font-medium text-sm tracking-wide whitespace-nowrap">${item.label}</a></li>`)
                 .join("");
         }
