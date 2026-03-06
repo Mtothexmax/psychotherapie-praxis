@@ -24,7 +24,13 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap');
 
+        html {
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+
         body {
+            margin: 0;
             font-family: 'Quicksand', sans-serif;
             font-weight: 400;
             background-image: radial-gradient(#B5C6B1 0.5px, transparent 0.5px);
@@ -37,6 +43,16 @@
         .dark body {
             background-image: radial-gradient(#72836E 0.5px, transparent 0.5px);
             background-color: #1e241b;
+        }
+
+        section {
+            scroll-margin-top: 120px;
+        }
+
+        @media (min-width: 768px) {
+            section {
+                scroll-margin-top: 170px;
+            }
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -93,7 +109,7 @@
         }
 
         /* Stable Shrinking Header */
-        header.scrolled .container {
+        header.scrolled .header-inner {
             padding-top: 0.25rem;
             padding-bottom: 0.25rem;
         }
@@ -108,6 +124,10 @@
         }
 
         @media (max-width: 768px) {
+            header.scrolled .svg-inject {
+                width: 3rem !important;
+                height: 2.25rem !important;
+            }
             header.scrolled .flex-col {
                 flex-direction: row !important;
                 justify-content: space-between !important;
@@ -123,7 +143,7 @@
                 width: auto !important;
             }
             header.scrolled #nav-list {
-                gap: 0.75rem !important;
+                gap: 0.5rem !important;
             }
             header.scrolled #nav-list a {
                 font-size: 0.7rem !important;
@@ -135,49 +155,47 @@
                 display: none;
             }
             header.scrolled h1 {
-                font-size: 0.95rem !important;
+                font-size: 0.875rem !important;
                 line-height: 1.2;
             }
             header.scrolled #nav-list {
                 display: none !important;
-            }
-            header.scrolled .container {
-                padding-left: 0.5rem;
-                padding-right: 0.5rem;
             }
         }
     </style>
 </head>
 
 <body class="min-h-screen text-text-dark dark:text-cream">
-    <header class="sticky top-0 z-50 bg-cream/60 dark:bg-text-dark/60 backdrop-blur-lg shadow-sm border-b border-sage/10 dark:border-boho-blush/20 transition-all duration-200">
-        <div class="container mx-auto px-4 py-4 md:py-5 transition-all duration-200">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-cream/60 dark:bg-text-dark/60 backdrop-blur-lg shadow-sm border-b border-sage/10 dark:border-boho-blush/20 transition-all duration-200 overflow-x-hidden">
+        <div class="header-inner w-full pl-0 pr-4 md:px-10 lg:px-12 py-3 md:py-5 transition-all duration-200">
             <div class="flex flex-col md:flex-row justify-between items-center transition-all duration-200">
-                <div class="flex items-center mb-4 md:mb-0 transition-all duration-200">
-                    <div class="mr-4 transition-all duration-200">
-                        <div class="svg-inject w-32 h-24 object-contain transition-all duration-200" data-src="icon.svg"></div>
+                <div class="flex items-center mb-3 md:mb-0 transition-all duration-200 min-w-0 w-full md:w-auto">
+                    <div class="mr-3 transition-all duration-200 flex-shrink-0">
+                        <div class="svg-inject w-16 h-12 md:w-32 md:h-24 object-contain transition-all duration-200" data-src="icon.svg"></div>
                     </div>
-                    <div>
-                        <h1 class="text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-wide transition-all duration-200">Privatpraxis <span class="fuer-span">für </span>Psychotherapie</h1>
-                        <p class="text-sm text-sage-dark dark:text-sage-light font-medium mt-0.5 transition-all duration-200">M. Sc. Psychologin &amp; Psychologische Psychotherapeutin</p>
+                    <div class="min-w-0">
+                        <h1 class="text-lg md:text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-tight md:tracking-wide transition-all duration-200 truncate sm:whitespace-normal">Privatpraxis <span class="fuer-span">für </span>Psychotherapie</h1>
+                        <p class="text-[10px] md:text-sm text-sage-dark dark:text-sage-light font-medium mt-0.5 transition-all duration-200 truncate md:whitespace-normal">M. Sc. Psychologin &amp; Psychologische Psychotherapeutin Felizia Reusch</p>
                     </div>
                 </div>
-                <nav class="w-full md:w-auto flex items-center justify-center md:justify-end gap-6 md:gap-10 transition-all duration-200">
+                <nav class="w-full md:w-auto flex items-center justify-center md:justify-end gap-8 md:gap-10 transition-all duration-200">
                     <ul class="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8 transition-all duration-200" id="nav-list"></ul>
-                    <button id="theme-toggle" class="w-8 h-8 rounded-full bg-sage/10 dark:bg-boho-blush/10 flex items-center justify-center text-boho-blush dark:text-boho-blush hover:bg-sage/20 dark:hover:bg-boho-blush/20 transition-all duration-200 flex-shrink-0 overflow-hidden">
-                        <span class="material-symbols-outlined theme-icon-light text-[20px]">light_mode</span>
-                        <span class="material-symbols-outlined theme-icon-dark hidden text-[20px]">dark_mode</span>
+                    <button id="theme-toggle" class="w-8 h-8 rounded-full bg-sage/10 dark:bg-boho-blush/10 flex items-center justify-center text-boho-blush dark:text-boho-blush hover:bg-sage/20 dark:hover:bg-boho-blush/20 transition-all duration-200 flex-shrink-0 overflow-hidden ml-2">
+                        <span class="material-symbols-outlined theme-icon-light text-[20px] flex items-center justify-center w-full h-full leading-none">light_mode</span>
+                        <span class="material-symbols-outlined theme-icon-dark hidden text-[20px] flex items-center justify-center w-full h-full leading-none">dark_mode</span>
                     </button>
                 </nav>
             </div>
         </div>
     </header>
+    
+    <div class="h-[116px] md:h-[168px] pointer-events-none" aria-hidden="true"></div>
 
-    <section id="home" class="relative py-16 md:py-28 overflow-hidden">
+    <section id="home" class="relative pt-10 pb-16 md:py-28 overflow-hidden">
         <div class="absolute top-[-10%] left-[-5%] w-96 h-96 bg-sage-light/20 dark:bg-sage/10 rounded-organic-1 blur-3xl z-0"></div>
         <div class="absolute bottom-[-10%] right-[-5%] w-80 h-80 bg-boho-blush/30 dark:bg-sage-dark/10 rounded-organic-2 blur-3xl z-0"></div>
-        <div class="container mx-auto px-4 relative z-10">
-            <div class="max-w-4xl mx-auto text-center md:text-left">
+        <div class="w-full px-4 md:px-10 lg:px-12 relative z-10">
+            <div class="max-w-4xl text-center md:text-left">
                 <div class="mb-10">
                     <h2 class="text-4xl md:text-6xl font-serif font-semibold mb-6 leading-tight text-text-dark dark:text-cream">
                         Professionelle Psychotherapie<br />
@@ -413,14 +431,11 @@
                         <div class="mr-3">
                             <div class="svg-inject w-12 h-12 object-contain" data-src="icon.svg"></div>
                         </div>
-                        <h3 class="text-xl font-serif font-semibold text-white tracking-wide">Privatpraxis für Psychotherapie</h3>
+                        <h3 class="text-xl font-serif font-semibold text-white tracking-wide">Privatpraxis für Psychotherapie Felizia Reusch</h3>
                     </div>
                     <p class="text-white/70 font-light leading-relaxed mb-4">
                         Psychologische Psychotherapie mit Schwerpunkt Verhaltenstherapie für Erwachsene.
                     </p>
-                    <div class="inline-block px-3 py-1 bg-white/10 rounded-md text-xs font-medium tracking-wider text-cream">
-                        NUR ERWACHSENE • PRIVATPRAXIS
-                    </div>
                 </div>
                 <div>
                     <h4 class="text-lg font-serif font-semibold mb-6 text-cream border-b border-white/10 pb-2 inline-block">Therapieangebot</h4>
@@ -436,7 +451,7 @@
                 </div>
             </div>
             <div class="pt-8 border-t border-white/10 text-center text-white/50 text-sm font-light">
-                <p>© <span id="current-year"></span> Privatpraxis für Psychotherapie. Alle Rechte vorbehalten.</p>
+                <p>© <span id="current-year"></span> Privatpraxis für Psychotherapie Felizia Reusch. Alle Rechte vorbehalten.</p>
                 <p class="mt-2 text-xs">Diese Website dient ausschließlich zu Informationszwecken.</p>
             </div>
         </div>
@@ -452,7 +467,7 @@
                 <h2 class="text-4xl font-serif font-semibold mb-8 text-text-dark dark:text-cream">Impressum</h2>
                 <div class="space-y-6 text-gray-900 dark:text-cream/80 leading-relaxed">
                     <p><strong>Angaben gemäß § 5 TMG</strong></p>
-                    <p>Privatpraxis für Psychotherapie<br>M. Sc. Psychologin Vorname Nachname<br>Musterstraße 123<br>10115 Berlin</p>
+                    <p>Privatpraxis für Psychotherapie<br>M. Sc. Psychologin Felizia Reusch<br>Musterstraße 123<br>10115 Berlin</p>
                     <p><strong>Kontakt</strong><br>Telefon: +49 (0) XXX XXX XXX<br>E-Mail: praxis@psychotherapie-beispiel.de</p>
                     <p><strong>Gesetzliche Berufsbezeichnung</strong><br>Psychologische Psychotherapeutin (verliehen in der Bundesrepublik Deutschland)</p>
                     <p><strong>Zuständige Aufsichtsbehörde</strong><br>Landesamt für Gesundheit und Soziales Berlin<br>Turmstraße 21, 10559 Berlin</p>
@@ -489,7 +504,7 @@
 
         const treatmentAreas = [
             { title: "Depressionen", description: "Behandlung von depressiven Episoden und anhaltenden depressiven Störungen", icon: "sentiment_dissatisfied" },
-            { title: "Angststörungen", description: "Evidenzbasierte Therapie von Panikstörungen, Agoraphobie, generalisierten Angststörungen und spezifischen Phobien.", icon: "cognition" },
+            { title: "Angststörungen", description: "Therapie von Panikstörungen, Agoraphobie, generalisierten Angststörungen und spezifischen Phobien.", icon: "cognition" },
             { title: "Traumafolgestörungen", description: "Behandlung von Folgebeschwerden nach belastenden Ereignissen, wie z.B. der Posttraumatischen Belastungsstörung (PTBS).", icon: "healing" },
             { title: "Burnout", description: "Therapeutische Hilfe bei emotionaler Erschöpfung, reduzierter Leistungsfähigkeit und dem Gefühl des Ausgebranntseins.", icon: "battery_3_bar" }
         ];
@@ -508,15 +523,20 @@
 
         function renderNavItems(items) {
             const width = window.innerWidth;
-            return items
-                .filter(item => {
-                    // Mobile: only show most critical links
-                    if (width < 520) return ["#schwerpunkte", "#kontakt"].includes(item.href);
-                    // Tablet/Small desktop transitions
-                    if (width < 1050) return !["#home", "#adhs-diagnostik", "#ueber-mich"].includes(item.href);
-                    if (width < 1300) return !["#adhs-diagnostik", "#ueber-mich"].includes(item.href);
-                    return true;
-                })
+            const filtered = items.filter(item => {
+                // Mobile: extremely limited for very narrow screens
+                if (width < 400) return ["#kontakt"].includes(item.href);
+                // Standard mobile
+                if (width < 640) return ["#schwerpunkte", "#kontakt"].includes(item.href);
+                // Tablet: Show 3-4 links
+                if (width < 900) return !["#home", "#adhs-diagnostik"].includes(item.href);
+                // Large tablet / Small laptop
+                if (width < 1150) return !["#home", "#adhs-diagnostik"].includes(item.href);
+                // Desktop transition
+                if (width < 1350) return !["#home"].includes(item.href);
+                return true;
+            });
+            return filtered
                 .map(item => `<li><a href="${item.href}" class="text-text-dark dark:text-cream/80 hover:text-sage dark:hover:text-boho-blush transition duration-300 font-medium text-sm tracking-wide whitespace-nowrap">${item.label}</a></li>`)
                 .join("");
         }
@@ -641,10 +661,24 @@
 
             const header = document.querySelector('header');
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 20) {
-                    header.classList.add('shadow-md', 'scrolled');
-                } else {
-                    header.classList.remove('shadow-md', 'scrolled');
+                const scrollPos = window.scrollY;
+                const width = window.innerWidth;
+                let action = "none";
+
+                if (scrollPos > 40) {
+                    if (!header.classList.contains('scrolled')) {
+                        header.classList.add('shadow-md', 'scrolled');
+                        action = "Added 'scrolled' class (Threshold > 40px)";
+                    }
+                } else if (scrollPos < 20) {
+                    if (header.classList.contains('scrolled')) {
+                        header.classList.remove('shadow-md', 'scrolled');
+                        action = "Removed 'scrolled' class (Threshold < 20px)";
+                    }
+                }
+
+                if (action !== "none") {
+                    console.log(`[Debug] Scroll Action. Width: ${width}px, Scroll: ${scrollPos}px, Action: ${action}`);
                 }
             });
 
