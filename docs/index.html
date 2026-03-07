@@ -190,7 +190,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center transition-all duration-200">
                 <div class="flex items-center mb-4 md:mb-0 transition-all duration-200 min-w-0 w-full md:w-auto">
                     <div class="mr-6 md:mr-4 transition-all duration-200 flex-shrink-0">
-                        <div class="svg-inject w-[5rem] h-[3.5rem] md:w-32 md:h-24 object-contain transition-all duration-200" data-src="icon.svg"></div>
+                        <div class="svg-inject w-24 h-18 md:w-32 md:h-24 object-contain transition-all duration-200" data-src="icon.svg"></div>
                     </div>
                     <div class="min-w-0">
                         <h1 class="text-lg md:text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-tight md:tracking-wide transition-all duration-200 whitespace-normal">Privatpraxis <span class="fuer-span">für </span>Psychotherapie</h1>
@@ -320,10 +320,17 @@
                 </div>
                 <div class="flex flex-col lg:flex-row gap-12 items-center">
                     <div class="w-full lg:w-1/3 flex justify-center lg:justify-end">
-                        <div class="relative w-72 h-80 md:w-80 md:h-96">
+                        <div class="relative w-72 h-[432px] md:w-80 md:h-[480px]">
                             <div class="absolute inset-0 bg-sage-light/30 dark:bg-sage/10 rounded-organic-1 transform rotate-6 scale-105"></div>
-                            <div class="absolute inset-0 bg-white dark:bg-text-dark rounded-organic-2 shadow-sm overflow-hidden flex items-center justify-center border-4 border-white dark:border-text-dark/50">
-                                <span class="material-symbols-outlined text-sage text-7xl mb-4 opacity-50 dark:text-cream">face_4</span>
+                            <div class="absolute inset-0 bg-white dark:bg-text-dark rounded-organic-2 shadow-sm overflow-hidden border-4 border-white dark:border-text-dark/50">
+                                <img 
+                                    src="foto.jpg" 
+                                    srcset="foto-600x400.jpg 400w, foto-1200x800.jpg 800w, foto-1800x1200.jpg 1200w" 
+                                    sizes="(max-width: 768px) 288px, 320px"
+                                    alt="Felizia Reusch" 
+                                    class="w-full h-full object-cover"
+                                    loading="lazy"
+                                >
                             </div>
                         </div>
                     </div>
