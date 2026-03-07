@@ -184,7 +184,8 @@
     </style>
 </head>
 
-<body class="min-h-screen text-text-dark dark:text-cream">
+<body class="min-h-screen text-text-dark dark:text-cream relative">
+    <div class="absolute top-0 left-[-5%] w-96 h-96 bg-sage-light/20 dark:bg-sage/10 rounded-organic-1 blur-3xl z-0 pointer-events-none"></div>
     <header class="fixed top-0 left-0 right-0 z-50 bg-cream/60 dark:bg-text-dark/60 backdrop-blur-lg shadow-sm border-b border-sage/10 dark:border-boho-blush/20 transition-all duration-200 overflow-x-hidden">
         <div class="header-inner container mx-auto px-4 py-4 md:py-5 transition-all duration-200">
             <div class="flex flex-col md:flex-row justify-between items-center transition-all duration-200">
@@ -212,7 +213,6 @@
     <div class="h-[116px] md:h-[168px] pointer-events-none" aria-hidden="true"></div>
 
     <section id="home" class="relative py-16 md:py-28 overflow-hidden">
-        <div class="absolute top-[-15%] left-[-5%] w-96 h-96 bg-sage-light/20 dark:bg-sage/10 rounded-organic-1 blur-3xl z-0"></div>
         <div class="absolute bottom-[-10%] right-[-5%] w-80 h-80 bg-boho-blush/30 dark:bg-sage-dark/10 rounded-organic-2 blur-3xl z-0"></div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-4xl mx-auto text-left">
@@ -240,11 +240,11 @@
                     </div>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-5 justify-start">
-                    <a class="btn-primary bg-sage hover:bg-sage-dark text-white font-medium py-3.5 px-12 rounded-full inline-flex items-center justify-center tracking-wide min-w-[350px]" href="#kontakt">
+                    <a class="btn-primary bg-sage hover:bg-sage-dark text-white font-medium py-3.5 px-6 sm:px-12 rounded-full inline-flex items-center justify-center tracking-wide w-full sm:w-auto sm:min-w-[350px]" href="#kontakt">
                         <span class="material-symbols-outlined mr-2 text-lg">calendar_month</span>
                         Termin anfragen
                     </a>
-                    <a class="bg-transparent border border-sage dark:border-boho-blush text-sage-dark dark:text-boho-blush hover:bg-boho-blush/10 dark:hover:bg-boho-blush/10 font-medium py-4 px-8 rounded-full inline-flex flex-col items-center justify-center transition duration-300 text-center leading-tight min-w-[300px]" href="#adhs-diagnostik">
+                    <a class="bg-transparent border border-sage dark:border-boho-blush text-sage-dark dark:text-boho-blush hover:bg-boho-blush/10 dark:hover:bg-boho-blush/10 font-medium py-4 px-6 sm:px-8 rounded-full inline-flex flex-col items-center justify-center transition duration-300 text-center leading-tight w-full sm:w-auto sm:min-w-[300px]" href="#adhs-diagnostik">
                         <span class="text-lg">ADHS-Diagnostik</span>
                         <span class="text-sm font-normal opacity-80">(Videosprechstunde möglich)</span>
                     </a>
@@ -325,7 +325,7 @@
                             <div class="absolute inset-0 bg-white dark:bg-text-dark rounded-organic-2 shadow-sm overflow-hidden border-4 border-white dark:border-text-dark/50">
                                 <img 
                                     src="foto.jpg" 
-                                    srcset="foto-600x400.jpg 400w, foto-1200x800.jpg 800w, foto-1800x1200.jpg 1200w" 
+                                    srcset="foto-600x400.jpg 400w, foto-1200x800.jpg 800w, foto-1800x1200.jpg 1200w, foto.jpg 4000w" 
                                     sizes="(max-width: 768px) 288px, 320px"
                                     alt="Felizia Reusch" 
                                     class="w-full h-full object-cover"
