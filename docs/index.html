@@ -25,8 +25,16 @@
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600&display=swap');
 
         html {
-            overflow-y: scroll;
+            overflow-y: auto;
             scroll-behavior: smooth;
+        }
+
+        /* Ensure scrollbars respect dark mode */
+        :root {
+            color-scheme: light;
+        }
+        html.dark {
+            color-scheme: dark;
         }
 
         body {
@@ -622,6 +630,7 @@
                     e.preventDefault();
                     const href = link.getAttribute("href");
                     legalModal.classList.remove("hidden");
+                    document.documentElement.classList.add("overflow-hidden");
                     document.body.classList.add("overflow-hidden");
                     
                     if (href === "#impressum") {
@@ -636,6 +645,7 @@
 
             document.getElementById("close-legal").addEventListener("click", () => {
                 legalModal.classList.add("hidden");
+                document.documentElement.classList.remove("overflow-hidden");
                 document.body.classList.remove("overflow-hidden");
             });
 
