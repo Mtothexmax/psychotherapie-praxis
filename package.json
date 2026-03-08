@@ -2,7 +2,8 @@
   "name": "psychotherapie-praxis",
   "version": "1.0.0",
   "scripts": {
-    "build": "tailwindcss -i ./input.css -o ./docs/style.css --minify"
+    "build": "tailwindcss -i ./input.css -o ./docs/style.css --minify",
+    "generate:fotos": "powershell -ExecutionPolicy Bypass -File ./generate-foto-variants.ps1"
   },
   "devDependencies": {
     "tailwindcss": "^3.4.1",
