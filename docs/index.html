@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="de">
 
 <head>
@@ -186,7 +186,18 @@
                 line-height: 1.05 !important;
             }
             header.scrolled #nav-list {
+                display: flex !important;
+                gap: 0 !important;
+            }
+            header.scrolled #theme-toggle {
                 display: none !important;
+            }
+            header.scrolled #nav-list a {
+                font-size: 0.78rem !important;
+                padding: 0.45rem 0.8rem;
+                line-height: 1.2;
+                border-radius: 9999px;
+                background: rgba(155, 174, 150, 0.15);
             }
         }
     </style>
@@ -204,14 +215,14 @@
                     <div class="min-w-0">
                         <h1 class="text-lg md:text-2xl font-serif font-semibold text-text-dark dark:text-cream tracking-tight md:tracking-wide transition-all duration-200 whitespace-normal">Privatpraxis <span class="fuer-span">für </span>Psychotherapie</h1>
                         <p class="header-subtitle text-[10px] md:text-sm text-sage-dark dark:text-sage-light font-medium mt-0.5 transition-all duration-200 whitespace-normal">M. Sc. Psychologin &amp; Psychologische Psychotherapeutin</p>
-                        <p class="header-name text-[10px] md:text-sm text-sage-dark dark:text-sage-light font-medium mt-0 transition-all duration-200 whitespace-normal">Felizia Reusch</p>
+                        <p class="header-name text-[10px] md:text-sm text-sage-dark dark:text-sage-light font-medium mt-0 transition-all duration-200 whitespace-normal">Franziska Reich</p>
                     </div>
                 </div>
                 <nav class="w-full md:w-auto flex items-center justify-center md:justify-end gap-6 md:gap-10 transition-all duration-200">
-                    <ul class="flex flex-wrap justify-center md:justify-end gap-5 md:gap-8 transition-all duration-200" id="nav-list"></ul>
-                    <button id="theme-toggle" class="w-10 h-10 rounded-full bg-sage/10 dark:bg-boho-blush/10 flex items-center justify-center text-boho-blush dark:text-boho-blush hover:bg-sage/20 dark:hover:bg-boho-blush/20 transition-all duration-300 flex-shrink-0">
-                        <span class="material-symbols-outlined theme-icon-light">light_mode</span>
-                        <span class="material-symbols-outlined theme-icon-dark hidden">dark_mode</span>
+                    <ul class="flex flex-wrap items-center justify-center md:justify-end gap-5 md:gap-8 transition-all duration-200" id="nav-list"></ul>
+                    <button id="theme-toggle" class="w-9 h-9 md:w-10 md:h-10 rounded-full bg-sage/5 dark:bg-boho-blush/5 flex items-center justify-center text-sage-dark dark:text-cream/80 hover:bg-sage/10 dark:hover:bg-boho-blush/10 transition-all duration-300 flex-shrink-0">
+                        <span class="material-symbols-outlined theme-icon-light text-[20px]">light_mode</span>
+                        <span class="material-symbols-outlined theme-icon-dark text-[20px] hidden">dark_mode</span>
                     </button>
                 </nav>
             </div>
@@ -269,8 +280,10 @@
                     <div class="absolute -right-20 -top-20 w-64 h-64 bg-boho-blush/20 dark:bg-sage/5 rounded-full blur-3xl"></div>
                     <div class="flex flex-col md:flex-row items-center gap-10 relative z-10">
                         <div class="md:w-1/3 flex justify-center">
-                            <div class="w-48 h-48 rounded-organic-3 bg-gradient-to-tr from-sage-light to-cream dark:from-sage-dark dark:to-text-dark flex items-center justify-center shadow-inner border border-white/50 dark:border-white/5 relative">
-                                <span class="material-symbols-outlined text-sage-dark dark:text-cream/80 text-6xl">video_camera_front</span>
+                            <div class="w-48 h-48 relative">
+                                <div class="w-full h-full rounded-organic-3 bg-gradient-to-tr from-sage-light to-cream dark:from-sage-dark dark:to-text-dark flex items-center justify-center shadow-inner border border-white/50 dark:border-white/5 overflow-hidden">
+                                    <img src="online-diagnose.jpg" alt="Online ADHS-Diagnostik" class="w-full h-full object-cover" />
+                                </div>
                                 <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-white dark:bg-sage-dark rounded-full flex items-center justify-center shadow-sm">
                                     <span class="material-symbols-outlined text-sage dark:text-cream">done_all</span>
                                 </div>
@@ -335,7 +348,7 @@
                                     src="foto.jpg" 
                                     srcset="foto-600x400.jpg 400w, foto-1200x800.jpg 800w, foto-1800x1200.jpg 1200w, foto.jpg 4000w" 
                                     sizes="(max-width: 768px) 288px, 320px"
-                                    alt="Felizia Reusch" 
+                                    alt="Franziska Reich" 
                                     class="w-full h-full object-cover"
                                     loading="lazy"
                                 >
@@ -466,7 +479,7 @@
                         <div class="mr-3">
                             <div class="svg-inject w-12 h-12 object-contain" data-src="icon.svg"></div>
                         </div>
-                        <h3 class="text-xl font-serif font-semibold text-white tracking-wide">Privatpraxis für Psychotherapie Felizia Reusch</h3>
+                        <h3 class="text-xl font-serif font-semibold text-white tracking-wide">Privatpraxis für Psychotherapie Franziska Reich</h3>
                     </div>
                     <p class="text-white/70 font-light leading-relaxed mb-4">
                         Psychologische Psychotherapie mit Schwerpunkt Verhaltenstherapie für Erwachsene.
@@ -485,7 +498,7 @@
                 </div>
             </div>
             <div class="pt-8 border-t border-white/10 text-center text-white/50 text-sm font-light">
-                <p>© <span id="current-year"></span> Privatpraxis für Psychotherapie Felizia Reusch.</p>
+                <p>© <span id="current-year"></span> Privatpraxis für Psychotherapie Franziska Reich.</p>
                 <p>Alle Rechte vorbehalten.</p>
                 <p class="mt-2 text-xs">Diese Website dient ausschließlich zu Informationszwecken.</p>
             </div>
@@ -502,13 +515,13 @@
                 <h2 class="text-4xl font-serif font-semibold mb-8 text-text-dark dark:text-cream">Impressum</h2>
                 <div class="space-y-6 text-gray-900 dark:text-cream/80 leading-relaxed">
                     <p><strong>Angaben gemäß § 5 TMG</strong></p>
-                    <p>Privatpraxis für Psychotherapie<br>M. Sc. Psychologin Felizia Reusch<br>Musterstraße 123<br>10115 Berlin</p>
-                    <p><strong>Kontakt</strong><br>Telefon: +49 (0) XXX XXX XXX<br>E-Mail: praxis@psychotherapie-beispiel.de</p>
+                    <p>Privatpraxis für Psychotherapie<br>M. Sc. Psychologin Franziska Reich<br>Im Rosental 28<br>56626 Andernach</p>
+                    <p><strong>Kontakt</strong><br>Telefon: 01512 3163727<br>E-Mail: reich.psychotherapie@gmail.de</p>
                     <p><strong>Gesetzliche Berufsbezeichnung</strong><br>Psychologische Psychotherapeutin (verliehen in der Bundesrepublik Deutschland)</p>
-                    <p><strong>Zuständige Aufsichtsbehörde</strong><br>Landesamt für Gesundheit und Soziales Berlin<br>Turmstraße 21, 10559 Berlin</p>
-                    <p><strong>Zuständige Kammer</strong><br>Psychotherapeutenkammer Berlin<br>Kurfürstendamm 184, 10707 Berlin</p>
-                    <p><strong>Berufsrechtliche Regelungen</strong><br>Gesetz über die Berufe des Psychologischen Psychotherapeuten und des Kinder- und Jugendlichenpsychotherapeuten (Psychotherapeutengesetz – PsychThG)<br>Berufsordnung der Psychotherapeutenkammer Berlin</p>
-                    <p><strong>Arztregistereintrag</strong><br>Eingetragen im Arztregister der Kassenärztlichen Vereinigung Berlin</p>
+                    <p>Landesamt für Soziales, Jugend und Versorgung<br>Baedekerstraße 2-20<br>56073 Koblenz</p>
+                    <p><strong>Zuständige Kammer</strong><br>Psychotherapeutenkammer<br>Wallaustr. 104, 55118 Mainz</p>
+                    <p><strong>Berufsrechtliche Regelungen</strong><br>Gesetz über die Berufe des Psychologischen Psychotherapeuten und des Kinder- und Jugendlichenpsychotherapeuten (Psychotherapeutengesetz – PsychThG)<br>Berufsordnung der Psychotherapeutenkammer Rheinland-Pfalz</p>
+                    <p><strong>Arztregistereintrag</strong><br>Eingetragen im Arztregister der Kassenärztlichen Vereinigung Rheinland-Pfalz</p>
                 </div>
             </div>
 
@@ -545,9 +558,9 @@
         ];
 
         const contactInfo = [
-            { label: "E-Mail", value: "praxis@psychotherapie-beispiel.de", icon: "mail" },
-            { label: "Telefon", value: "+49 (0) XXX XXX XXX", icon: "phone" },
-            { label: "Praxisadresse", value: "Musterstraße 123<br>10115 Berlin", icon: "location_on" },
+            { label: "E-Mail", value: "<a href=\"mailto:reich.psychotherapie@gmail.de\" class=\"hover:text-sage dark:hover:text-boho-blush transition duration-300\">reich.psychotherapie@gmail.de</a>", icon: "mail" },
+            { label: "Telefon", value: "<a href=\"tel:+4915123163727\" class=\"hover:text-sage dark:hover:text-boho-blush transition duration-300\">01512 3163727</a>", icon: "phone" },
+            { label: "Praxisadresse", value: "Im Rosental 28<br>56626 Andernach<br><a href=\"https://www.google.com/maps/place//data=!4m2!3m1!1s0x47be5f7e6a28475d:0x516ae03ae9adad73?sa=X&ved=1t:8290&ictx=111\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"inline-block mt-1 hover:text-sage dark:hover:text-boho-blush transition duration-300 underline underline-offset-2\">In Google Maps öffnen</a>", icon: "location_on" },
             { label: "Sprechzeiten", value: "Termine ausschließlich nach vorheriger Vereinbarung.", icon: "schedule" }
         ];
 
@@ -572,7 +585,20 @@
                 return true;
             });
             return filtered
-                .map(item => `<li><a href="${item.href}" class="text-text-dark dark:text-cream/80 hover:text-sage dark:hover:text-boho-blush transition duration-300 font-medium text-sm tracking-wide whitespace-nowrap">${item.label}</a></li>`)
+                .map(item => {
+                    const isTinyContact = width < 400 && item.href === "#kontakt";
+                    const isKontakt = item.href === "#kontakt";
+                    const tinyContactClass = isTinyContact
+                        ? "text-text-dark dark:text-cream hover:bg-sage/20 dark:hover:bg-boho-blush/20"
+                        : "text-text-dark dark:text-cream/80 hover:text-sage dark:hover:text-boho-blush";
+                    const kontaktHighlightClass = isKontakt
+                        ? "rounded-full bg-sage/10 dark:bg-boho-blush/10 border border-sage/20 dark:border-boho-blush/30"
+                        : "";
+                    const kontaktStyle = isKontakt
+                        ? 'style="padding:0.45rem 0.9rem; line-height:1.2; display:inline-flex; align-items:center;"'
+                        : "";
+                    return `<li><a href="${item.href}" class="${tinyContactClass} ${kontaktHighlightClass} transition duration-300 font-medium text-sm tracking-wide whitespace-nowrap" ${kontaktStyle}>${item.label}</a></li>`;
+                })
                 .join("");
         }
 
@@ -769,3 +795,5 @@
     </script>
 </body>
 </html>
+
+
