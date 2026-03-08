@@ -160,6 +160,16 @@
             box-shadow: 0 12px 30px rgba(114, 131, 110, 0.08);
         }
 
+        /* Prevent occasional Chrome/Safari paint glitches on blurred cards */
+        .render-stable {
+            position: relative;
+            isolation: isolate;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            will-change: transform;
+        }
+
         .section-divider {
             height: 1px;
             background: linear-gradient(to right, transparent, #B5C6B1, transparent);
@@ -411,7 +421,7 @@
                         </div>
                     </div>
                     <div class="w-full lg:w-2/3">
-                        <div class="bg-white/80 dark:bg-text-dark/60 backdrop-blur-sm rounded-3xl p-8 md:p-10 shadow-sm border border-sage/10 dark:border-boho-blush/20 card-hover">
+                        <div class="bg-white/80 dark:bg-text-dark/60 backdrop-blur-sm rounded-3xl p-8 md:p-10 shadow-sm border border-sage/10 dark:border-boho-blush/20 card-hover render-stable">
                             <div class="floral-border pl-6 mb-8">
                                 <h3 class="text-2xl font-serif font-semibold text-text-dark dark:text-cream">Qualifikation &amp; Therapieangebot</h3>
                             </div>
