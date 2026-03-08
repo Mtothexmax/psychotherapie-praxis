@@ -474,60 +474,19 @@
                     <div class="w-16 h-0.5 bg-sage mx-auto mb-6"></div>
                     <p class="text-lg text-gray-600 dark:text-cream/70 font-light">Nehmen Sie Kontakt auf für ein erstes Gespräch</p>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
-                    <div class="lg:col-span-2">
+                <div class="max-w-3xl mx-auto">
+                    <div>
                         <div class="bg-white dark:bg-text-dark/40 rounded-3xl p-8 shadow-sm border border-sage/10 dark:border-boho-blush/20 h-full relative overflow-hidden">
                             <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-mint/40 dark:bg-sage/5 rounded-full blur-2xl"></div>
                             <h3 class="text-2xl font-serif font-semibold mb-8 text-text-dark dark:text-cream">Praxisinformationen</h3>
                             <div class="space-y-8 relative z-10" id="contact-info"></div>
-                        </div>
-                    </div>
-                    <div class="lg:col-span-3">
-                        <div class="bg-white dark:bg-text-dark/40 rounded-3xl p-8 md:p-10 shadow-sm border border-sage/10 dark:border-boho-blush/20 relative">
-                            <h3 class="text-2xl font-serif font-semibold mb-8 text-text-dark dark:text-cream">Kontaktanfrage</h3>
-                            <form class="space-y-6" id="contact-form" action="https://api.staticforms.dev/submit" method="POST">
-                                <input type="hidden" name="accessKey" value="sf_189c2690jm42igf1n2ja96eh">
-                                <input type="hidden" name="replyTo" value="@">
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label class="block text-sm font-medium text-sage-dark dark:text-sage-light mb-2" for="name">Name *</label>
-                                        <input class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-boho-blush/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-sage transition duration-300 outline-none dark:text-cream" id="name" name="name" required type="text" />
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium text-sage-dark dark:text-sage-light mb-2" for="email">E-Mail *</label>
-                                        <input class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-boho-blush/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-boho-blush transition duration-300 outline-none dark:text-cream" id="email" name="email" required type="email" />
-                                    </div>
-                                </div>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div>
-                                        <label class="block text-sm font-medium text-sage-dark dark:text-sage-light mb-2" for="phone">Telefon</label>
-                                        <input class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-boho-blush/20 dark:border-boho-blush/40 rounded-xl focus:ring-2 focus:ring-boho-blush focus:border-boho-blush transition duration-300 outline-none dark:text-cream" id="phone" name="phone" type="tel" />
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-medium text-sage-dark dark:text-sage-light mb-2" for="subject">Betreff</label>
-                                        <select class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-boho-blush/40 rounded-xl focus:ring-2 focus:ring-sage focus:border-boho-blush transition duration-300 outline-none text-gray-700 dark:text-cream/80" id="subject" name="subject">
-                                            <option value="" class="dark:bg-text-dark">Bitte auswählen</option>
-                                            <option value="termin" class="dark:bg-text-dark">Therapieanfrage (Privat/Selbstzahler/in)</option>
-                                            <option value="adhs" class="dark:bg-text-dark">ADHS-Diagnostik (Videosprechstunde möglich)</option>
-                                            <option value="sonstiges" class="dark:bg-text-dark">Sonstiges</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-sage-dark dark:text-sage-light mb-2" for="message">Nachricht *</label>
-                                    <textarea class="w-full px-4 py-3 bg-cream/30 dark:bg-text-dark/30 border border-sage/20 dark:border-boho-blush/20 rounded-xl focus:ring-2 focus:ring-sage focus:border-boho-blush transition duration-300 outline-none resize-none dark:text-cream" id="message" name="message" required rows="4"></textarea>
-                                </div>
-                                <div class="flex items-start bg-boho-blush/5 dark:bg-boho-blush/10 p-4 rounded-xl">
-                                    <input class="h-5 w-5 text-boho-blush focus:ring-boho-blush border-boho-blush/30 rounded mt-0.5" id="privacy" name="privacy" required type="checkbox" />
-                                    <label class="ml-3 text-sm text-gray-600 dark:text-cream/70 font-light leading-relaxed" for="privacy">
-                                        Ich stimme der Verarbeitung meiner Daten gemäß Datenschutzerklärung zu. *
-                                    </label>
-                                </div>
-                                <button class="w-full bg-boho-blush hover:bg-boho-blush/80 text-text-dark font-medium py-4 px-6 rounded-xl transition duration-300 flex items-center justify-center tracking-wide" type="submit">
-                                    <span class="material-symbols-outlined mr-2">send</span>
-                                    Nachricht senden
-                                </button>
-                            </form>
+                            <div class="mt-16 p-5 rounded-xl bg-boho-blush/10 dark:bg-boho-blush/15 border border-boho-blush/20 dark:border-transparent">
+                                <h4 class="text-lg font-serif font-semibold mb-3 text-text-dark dark:text-cream">Hinweis zum Datenschutz bei Kontaktaufnahme</h4>
+                                <p class="text-sm text-gray-700 dark:text-cream/80 leading-relaxed">
+                                    Bitte senden Sie per E-Mail nur Angaben zur Terminvereinbarung (z. B. Name, Rückrufnummer, Erreichbarkeit) und keine Gesundheits- oder Patientendaten.
+                                    Die Übermittlung unverschlüsselter E-Mails erfolgt auf eigenes Risiko der absendenden Person.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -597,10 +556,12 @@
                     <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
                     <h3 class="text-2xl font-serif font-semibold">2. Datenerfassung auf dieser Website</h3>
                     <p><strong>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</strong><br>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Die Kontaktdaten können Sie dem Impressum dieser Website entnehmen.</p>
-                    <p><strong>Wie erfassen wir Ihre Daten?</strong><br>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+                    <p><strong>Wie erfassen wir Ihre Daten?</strong><br>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen, z. B. per E-Mail oder telefonisch bei der Terminvereinbarung.</p>
                     <p><strong>Wofür nutzen wir Ihre Daten?</strong><br>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden.</p>
-                    <h3 class="text-2xl font-serif font-semibold">3. Kontaktformular</h3>
-                    <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+                    <h3 class="text-2xl font-serif font-semibold">3. Kontaktaufnahme per E-Mail oder Telefon</h3>
+                    <p>Wenn Sie uns per E-Mail oder telefonisch kontaktieren, verarbeiten wir die von Ihnen mitgeteilten Kontaktdaten und Inhalte ausschließlich zur Bearbeitung Ihrer Anfrage und zur Terminvereinbarung. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Anbahnung eines Behandlungs- bzw. Vertragsverhältnisses) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer geordneten Kommunikation).</p>
+                    <p>Bitte übermitteln Sie per E-Mail keine sensiblen Gesundheits- oder Patientendaten, sondern ausschließlich organisatorische Angaben zur Terminvereinbarung (z. B. Name, Rückrufnummer, Erreichbarkeit).</p>
+                    <p>Die Übermittlung von E-Mails im Internet kann Sicherheitslücken aufweisen. Für den Inhalt und die Art der übermittelten Informationen ist die absendende Person selbst verantwortlich.</p>
                 </div>
             </div>
         </div>
@@ -738,40 +699,6 @@
                 legalModal.classList.add("hidden");
                 document.documentElement.classList.remove("overflow-hidden");
                 document.body.classList.remove("overflow-hidden");
-            });
-
-            document.getElementById("contact-form").addEventListener("submit", function(e) {
-                e.preventDefault();
-                const form = this;
-                const submitBtn = form.querySelector('button[type="submit"]');
-                const originalContent = submitBtn.innerHTML;
-                
-                submitBtn.innerHTML = '<span class="material-symbols-outlined mr-2 animate-spin">sync</span> Wird gesendet...';
-                submitBtn.disabled = true;
-                submitBtn.classList.add('opacity-70');
-
-                const formData = new FormData(form);
-                const data = Object.fromEntries(formData.entries());
-
-                fetch(form.action, {
-                    method: form.method,
-                    body: JSON.stringify(data),
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
-                })
-                .then(response => {
-                    if (response.ok) {
-                        alert("Vielen Dank für Ihre Anfrage. Wir haben Ihre Nachricht erhalten.");
-                        form.reset();
-                    } else {
-                        alert("Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.");
-                    }
-                })
-                .catch(() => alert("Es gab einen Fehler. Bitte prüfen Sie Ihre Internetverbindung."))
-                .finally(() => {
-                    submitBtn.innerHTML = originalContent;
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('opacity-70');
-                });
             });
 
             document.addEventListener("click", (event) => {
